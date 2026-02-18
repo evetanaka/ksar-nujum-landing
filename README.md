@@ -1,47 +1,41 @@
 # Ksar Nujum Landing Page
 
-Luxury villas & longevity resort in Marrakech. One-page landing site.
+Luxury villas & longevity resort in Marrakech. One-page landing site with organic expressionist design.
 
 ## Tech Stack
 
 - **Framework**: Next.js 14
 - **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
+- **Icons**: Lucide React
 - **Language**: TypeScript
-
-## Structure
-
-```
-src/
-├── app/
-│   ├── layout.tsx      # Root layout with fonts
-│   ├── page.tsx        # Main page composing sections
-│   └── globals.css     # Global styles
-├── components/
-│   ├── Header.tsx      # Sticky navigation
-│   └── Footer.tsx      # Site footer
-├── sections/
-│   ├── Hero.tsx        # Full-screen hero
-│   ├── Vision.tsx      # Story & philosophy
-│   ├── Residences.tsx  # 4 villa collections
-│   ├── Experience.tsx  # Amenities grid
-│   ├── Longevity.tsx   # Clinic details
-│   ├── Gallery.tsx     # Image masonry
-│   └── Contact.tsx     # Form & FAQ
-└── lib/                # Utilities
-```
 
 ## Design System
 
 ### Colors
-- Primary: `#D4AF37` (Gold)
-- Secondary: `#1C1C1C` (Deep black)
-- Accent: `#8B7355` (Terracotta)
-- Background: `#FAF8F5` (Warm off-white)
+- Ochre: `#BC9E73` (Primary background)
+- Dark Brown: `#2C241B` (Text)
+- Gold: `#D4AF37` (Accents)
+- Sand: `#F5F2EB` (Light sections)
 
 ### Typography
 - Headlines: Cormorant Garamond (serif)
 - Body: Inter (sans-serif)
+
+## Sections
+
+1. **Hero** - Parallax background, tagline "Legacy Meets Longevity"
+2. **Philosophy** - Vision & organic architecture story
+3. **Residences** - 4 villa collections (Atlas, Majorelle, Menara, Agafay)
+4. **Longevity** - Clinic with 3 levels
+5. **Footer** - Contact & newsletter
+
+## Features
+
+- Custom cursor animation
+- Parallax scrolling
+- Smooth section transitions
+- Interactive villa selector
+- Responsive design
 
 ## Getting Started
 
@@ -52,12 +46,11 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
-## Sections
+## Villas
 
-1. **Hero** - Video background, tagline, CTA
-2. **Vision** - Storytelling, 3 pillars, location
-3. **Residences** - 4 collections with tabs
-4. **Experience** - Gastronomy, wellness, lifestyle
-5. **Longevity** - 3-level clinic journey
-6. **Gallery** - Masonry + masterplan
-7. **Contact** - Form, FAQ, map
+| Collection | Size | Specs | Price |
+|------------|------|-------|-------|
+| ATLAS | 500m² | 5 Suites | From €2.5M |
+| MAJORELLE | 450m² | 4 Suites | From €2.1M |
+| MENARA | 400m² | 4 Suites | From €1.8M |
+| AGAFAY | 320m² | 3 Suites | From €1.5M |

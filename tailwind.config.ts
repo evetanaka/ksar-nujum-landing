@@ -7,19 +7,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#D4AF37",      // Or doré
-        secondary: "#1C1C1C",    // Noir profond
-        accent: "#8B7355",       // Terre/taupe
-        background: "#FAF8F5",   // Off-white chaud
-        foreground: "#2D2D2D",   // Text
+        ochre: '#BC9E73',
+        darkBrown: '#2C241B',
+        gold: '#D4AF37',
+        sand: '#F5F2EB',
       },
       fontFamily: {
-        serif: ["Cormorant Garamond", "serif"],
-        sans: ["Inter", "sans-serif"],
-      },
-      spacing: {
-        section: "120px",
-        "section-mobile": "80px",
+        serif: ['var(--font-serif)', 'Cormorant Garamond', 'serif'],
+        sans: ['var(--font-sans)', 'Inter', 'sans-serif'],
       },
     },
   },

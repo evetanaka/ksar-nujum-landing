@@ -9,14 +9,15 @@ const inter = Inter({
 
 const cormorant = Cormorant_Garamond({ 
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
   variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
   title: "Ksar Nujum | Luxury Villas & Longevity Resort in Marrakech",
-  description: "Twelve exceptional estates where world-class wellness meets timeless Moroccan craftsmanship. Discover the art of living well in Marrakech.",
-  keywords: ["luxury villas", "Marrakech", "longevity", "wellness", "Morocco", "real estate"],
+  description: "An organic architectural sanctuary in Marrakech. Where ultra-luxury living integrates with the science of eternal youth.",
+  keywords: ["luxury villas", "Marrakech", "longevity", "wellness", "Morocco", "real estate", "organic architecture"],
 };
 
 export default function RootLayout({
@@ -26,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${cormorant.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${cormorant.variable} antialiased`}>
         {children}
       </body>
     </html>
