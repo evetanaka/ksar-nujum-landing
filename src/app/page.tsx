@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, ArrowUpRight, Play, MapPin, Diamond, Activity, Hourglass } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Play, MapPin, Diamond, Activity, Hourglass, X, Utensils, Coffee, Waves, Sparkles } from 'lucide-react';
 
 /* ----------------------------------------------------------------------
    DESIGN SYSTEM & ASSETS
@@ -46,6 +46,81 @@ const VILLAS = [
     price: "From €1.5M",
     image: "https://images.unsplash.com/photo-1539667468225-eebb663053e6?q=80&w=2055&auto=format&fit=crop",
     specs: "320m² • 3 Suites"
+  }
+];
+
+const EXPERIENCES = [
+  {
+    id: 'gastronomy',
+    title: 'Gastronomy',
+    subtitle: 'From Michelin stars to farm-fresh grills',
+    icon: <Utensils size={24} />,
+    image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop',
+    hoverList: ['The Signature Restaurant', 'The Garden Table', 'Private Chef Service'],
+    cta: 'Explore Dining',
+    action: 'modal' as const,
+    modalContent: {
+      headline: 'Two Culinary Journeys',
+      description: 'At Ksar Nujum, dining is an exploration of terroir. Our Michelin-starred chef reinterprets Moroccan classics with avant-garde techniques, while our organic garden provides the soul for our farm-to-table grills.',
+      features: [
+        { title: 'The Signature', desc: 'Fine dining tasting menus paired with rare vintages.' },
+        { title: 'The Garden Table', desc: 'Al fresco grilling in the heart of our organic potager.' },
+        { title: 'In-Villa Dining', desc: 'A private chef and sommelier, exclusively for you.' }
+      ],
+      detailImage: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop'
+    }
+  },
+  {
+    id: 'longevity-exp',
+    title: 'Longevity Clinic',
+    subtitle: 'Science meets serenity',
+    icon: <Sparkles size={24} />,
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop',
+    hoverList: ['400m² Wellness Sanctuary', '3 Levels of Care', 'Bio-hacking Lab'],
+    cta: 'Discover',
+    action: 'scroll' as const,
+    target: 'longevity',
+    modalContent: null
+  },
+  {
+    id: 'daily',
+    title: 'Daily Rituals',
+    subtitle: 'The social heart of Ksar Nujum',
+    icon: <Coffee size={24} />,
+    image: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2071&auto=format&fit=crop',
+    hoverList: ['Specialty Coffee', 'Artisan Bakery', 'Co-working Lounge'],
+    cta: 'View Menu',
+    action: 'modal' as const,
+    modalContent: {
+      headline: 'The Morning Ritual',
+      description: 'Start your day at The Nujum Café. Whether it\'s a single-origin pour-over or a warm sourdough loaf fresh from the oven, we believe in the luxury of simple things done perfectly.',
+      features: [
+        { title: 'The Roastery', desc: 'Beans sourced directly from sustainable farms.' },
+        { title: 'The Bakery', desc: 'French pastries with a Moroccan twist, baked hourly.' },
+        { title: 'The Terrace', desc: 'Panoramic views of the Atlas for your morning read.' }
+      ],
+      detailImage: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=2000&auto=format&fit=crop'
+    }
+  },
+  {
+    id: 'resort',
+    title: 'Resort Living',
+    subtitle: '365-day hotel service included',
+    icon: <Waves size={24} />,
+    image: 'https://images.unsplash.com/photo-1562329347-6a2760c634cd?q=80&w=2069&auto=format&fit=crop',
+    hoverList: ['24/7 Concierge', 'Housekeeping', 'Pool & Gardens'],
+    cta: 'View Services',
+    action: 'modal' as const,
+    modalContent: {
+      headline: 'Effortless Ownership',
+      description: 'Live like a guest in your own home. Our dedicated team handles every detail, from stocking your fridge before arrival to managing rental yields when you are away.',
+      features: [
+        { title: 'Concierge', desc: 'Flights, excursions, and reservations managed 24/7.' },
+        { title: 'Housekeeping', desc: 'Daily or weekly service tailored to your preference.' },
+        { title: 'Maintenance', desc: 'Pool, garden, and technical support included.' }
+      ],
+      detailImage: 'https://images.unsplash.com/photo-1571896349842-6e53ce41e887?q=80&w=2000&auto=format&fit=crop'
+    }
   }
 ];
 
@@ -127,29 +202,109 @@ const Cursor = () => {
   );
 };
 
-const MagneticButton = ({ children, className = "", variant = "dark" }: { children: React.ReactNode; className?: string; variant?: "dark" | "light" }) => {
+const MagneticButton = ({ children, className = "", variant = "dark", onClick }: { children: React.ReactNode; className?: string; variant?: "dark" | "light" | "outline"; onClick?: () => void }) => {
   const styles = {
     dark: {
       border: "border-[#D4AF37]/30",
       textHover: "group-hover:text-black",
-      bgFill: "bg-[#D4AF37]"
+      bgFill: "bg-[#D4AF37]",
+      textBase: "text-[#2C241B]"
     },
     light: {
       border: "border-[#2C241B]/30",
       textHover: "group-hover:text-[#F5F2EB]",
-      bgFill: "bg-[#2C241B]"
+      bgFill: "bg-[#2C241B]",
+      textBase: "text-[#2C241B]"
+    },
+    outline: {
+      border: "border-white/30",
+      textHover: "group-hover:text-black",
+      bgFill: "bg-white",
+      textBase: "text-white"
     }
   };
 
   const currentStyle = styles[variant] || styles.dark;
 
   return (
-    <button className={`group relative px-8 py-4 overflow-hidden rounded-full border transition-all hover:border-transparent ${currentStyle.border} ${className}`}>
-      <span className={`relative z-10 font-sans text-xs uppercase tracking-[0.2em] transition-colors duration-500 ${currentStyle.textHover}`}>
+    <button onClick={onClick} className={`group relative px-8 py-4 overflow-hidden rounded-full border transition-all hover:border-transparent ${currentStyle.border} ${className}`}>
+      <span className={`relative z-10 font-sans text-xs uppercase tracking-[0.2em] transition-colors duration-500 ${currentStyle.textBase} ${currentStyle.textHover}`}>
         {children}
       </span>
       <div className={`absolute inset-0 ${currentStyle.bgFill} transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out`} />
     </button>
+  );
+};
+
+type ExperienceItem = typeof EXPERIENCES[number];
+
+const ExperienceModal = ({ item, onClose }: { item: ExperienceItem | null; onClose: () => void }) => {
+  if (!item || !item.modalContent) return null;
+  const { modalContent } = item;
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
+  return (
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4">
+      {/* Backdrop */}
+      <div 
+        className="absolute inset-0 bg-[#2C241B]/80 backdrop-blur-md transition-opacity duration-300"
+        onClick={onClose}
+      ></div>
+
+      {/* Modal Content */}
+      <div className="relative bg-[#F5F2EB] w-full max-w-6xl h-[85vh] md:h-[80vh] rounded-[2rem] overflow-hidden shadow-2xl flex flex-col md:flex-row animate-[fadeIn_0.5s_ease-out]">
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 z-50 p-2 rounded-full bg-white/20 hover:bg-[#2C241B] hover:text-white transition-colors duration-300"
+        >
+          <X size={24} />
+        </button>
+
+        {/* Left: Image */}
+        <div className="w-full md:w-1/2 h-48 md:h-full relative">
+          <img
+            src={modalContent.detailImage}
+            alt={item.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#F5F2EB]/10 md:to-transparent"></div>
+        </div>
+
+        {/* Right: Content */}
+        <div className="w-full md:w-1/2 p-8 md:p-16 overflow-y-auto flex flex-col justify-center">
+          <div className="mb-2 flex items-center gap-2 text-[#BC9E73] font-bold tracking-widest text-xs uppercase">
+            {item.icon}
+            <span>{item.title}</span>
+          </div>
+          <h3 className="font-serif text-4xl md:text-5xl text-[#2C241B] mb-6 leading-tight">
+            {modalContent.headline}
+          </h3>
+          <p className="font-sans text-gray-600 font-light leading-relaxed mb-12">
+            {modalContent.description}
+          </p>
+
+          <div className="space-y-8 mb-12">
+            {modalContent.features.map((feature, i) => (
+              <div key={i} className="border-l-2 border-[#BC9E73]/30 pl-6">
+                <h4 className="font-serif text-xl text-[#2C241B] mb-1">{feature.title}</h4>
+                <p className="text-sm text-gray-500 font-light">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <MagneticButton variant="light" className="w-full md:w-auto">Make a Reservation</MagneticButton>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -386,6 +541,80 @@ const Residences = () => {
   );
 };
 
+const Experience = () => {
+  const [activeModal, setActiveModal] = useState<ExperienceItem | null>(null);
+
+  const openModal = (exp: ExperienceItem) => {
+    if (exp.action === 'modal') {
+      setActiveModal(exp);
+    } else if (exp.action === 'scroll' && exp.target) {
+      const element = document.getElementById(exp.target);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section id="experience" className="py-24 bg-[#F5F2EB] text-[#2C241B]">
+      {activeModal && <ExperienceModal item={activeModal} onClose={() => setActiveModal(null)} />}
+      
+      <div className="container mx-auto px-6 md:px-16">
+        <div className="text-center mb-16">
+          <span className="text-[#BC9E73] text-xs font-bold tracking-[0.3em] uppercase block mb-6">The Experience</span>
+          <h2 className="font-serif text-4xl md:text-6xl text-[#2C241B]">&ldquo;Live like a guest. <span className="italic text-[#BC9E73]">Every day.&rdquo;</span></h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 h-auto">
+          {EXPERIENCES.map((exp) => (
+            <div
+              key={exp.id}
+              className="group relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden cursor-pointer"
+              onClick={() => openModal(exp)}
+            >
+              {/* Background Image */}
+              <img
+                src={exp.image}
+                alt={exp.title}
+                className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-110 group-hover:brightness-[0.4]"
+              />
+              
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500"></div>
+
+              {/* Initial Content (Bottom) */}
+              <div className="absolute bottom-0 left-0 p-8 w-full transform transition-transform duration-500 group-hover:-translate-y-8">
+                <div className="flex items-center gap-3 text-[#D4AF37] mb-2">
+                  {exp.icon}
+                  <span className="text-xs font-bold uppercase tracking-widest">{exp.title}</span>
+                </div>
+                <h3 className="font-serif text-3xl text-white mb-2">{exp.subtitle}</h3>
+                
+                {/* Hover Reveal Content */}
+                <div className="h-0 overflow-hidden group-hover:h-auto transition-all duration-500 opacity-0 group-hover:opacity-100 pt-4 border-t border-white/20 mt-4">
+                  <ul className="space-y-2 mb-6">
+                    {exp.hoverList.map((item, idx) => (
+                      <li key={idx} className="text-white/80 text-sm font-light flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-[#D4AF37]"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex items-center text-[#D4AF37] text-xs uppercase tracking-[0.2em] group/btn">
+                    {exp.cta}
+                    <ArrowRight size={14} className="ml-2 transform group-hover/btn:translate-x-2 transition-transform" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Border Glow Effect */}
+              <div className="absolute inset-0 border-2 border-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none scale-95 group-hover:scale-100"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Longevity = () => {
   return (
     <section id="longevity" className="py-32 bg-[#F5F2EB] px-6 md:px-16">
@@ -472,6 +701,7 @@ export default function Home() {
       <Hero />
       <Vision />
       <Residences />
+      <Experience />
       <Longevity />
       <Footer />
     </div>
