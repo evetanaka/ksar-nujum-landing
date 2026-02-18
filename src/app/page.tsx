@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, ArrowUpRight, Play } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowRight, ArrowUpRight, Play, MapPin, Diamond, Activity, Hourglass } from 'lucide-react';
 
 /* ----------------------------------------------------------------------
    DESIGN SYSTEM & ASSETS
@@ -70,6 +70,40 @@ const useMousePosition = () => {
     return () => window.removeEventListener("mousemove", updateMousePosition);
   }, []);
   return mousePosition;
+};
+
+// Animation Hook: Fade In on Scroll
+const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-1000 transform ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      } ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
 };
 
 /* ----------------------------------------------------------------------
@@ -146,7 +180,7 @@ const Hero = () => {
         <nav className="flex justify-between items-start">
           <div className="font-serif text-2xl tracking-widest text-[#2C241B] font-bold">KSAR NUJUM</div>
           <div className="hidden md:flex gap-12 text-xs uppercase tracking-[0.2em] font-medium text-[#2C241B]">
-            {['Residences', 'Longevity', 'Experience', 'Enquire'].map(item => (
+            {['Vision', 'Residences', 'Longevity', 'Experience', 'Contact'].map(item => (
               <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-white transition-colors">{item}</a>
             ))}
           </div>
@@ -175,35 +209,120 @@ const Hero = () => {
   );
 };
 
-const Philosophy = () => {
+const Vision = () => {
   return (
-    <section className="py-32 bg-[#F5F2EB] text-[#2C241B] px-6 md:px-16 overflow-hidden">
-      <div className="flex flex-col md:flex-row gap-20 items-start">
-        <div className="md:w-1/3 pt-4">
-          <span className="text-[#BC9E73] text-xs font-bold tracking-[0.2em] uppercase mb-4 block">The Vision</span>
-          <h2 className="font-serif text-4xl md:text-5xl leading-tight mb-8">
-            Not built on the land,<br/> but <span className="italic font-light">of the land.</span>
+    <section id="vision" className="py-24 md:py-32 bg-[#F5F2EB] text-[#2C241B] px-6 md:px-16 overflow-hidden">
+      {/* Header */}
+      <div className="text-center max-w-4xl mx-auto mb-20">
+        <FadeIn>
+          <span className="text-[#BC9E73] text-xs font-bold tracking-[0.3em] uppercase mb-6 block">The Vision</span>
+          <h2 className="font-serif text-4xl md:text-6xl leading-tight">
+            &ldquo;A sanctuary where time bends <br/> <span className="italic text-[#BC9E73]">to your rhythm&rdquo;</span>
           </h2>
-          <MagneticButton variant="light">Read the Story</MagneticButton>
-        </div>
-        
-        <div className="md:w-2/3 relative">
-          <div className="columns-1 md:columns-2 gap-8 space-y-8">
-            <div className="relative overflow-hidden rounded-[40px_10px_40px_10px]">
-              <img src="https://images.unsplash.com/photo-1512958779360-18c65856be8b?q=80&w=1000&auto=format&fit=crop" alt="Architecture" className="w-full object-cover hover:scale-105 transition-transform duration-1000 ease-out" />
-            </div>
-            <div className="relative p-8 bg-white border border-[#BC9E73]/20 rounded-[10px_40px_10px_40px] mt-12">
-               <p className="font-serif text-2xl italic text-[#BC9E73] mb-4">&ldquo;A return to origins&rdquo;</p>
-               <p className="font-sans text-sm font-light leading-relaxed text-gray-600">
-                 Inspired by Javier Senosiain&apos;s organic expressionism, Ksar Nujum creates a dialogue between the stark beauty of the Agafay desert and the fluidity of life. Curves replace corners. Light replaces walls.
-               </p>
-            </div>
-            <div className="relative overflow-hidden rounded-[100px_100px_0_0] h-64 md:h-96">
-               <img src="https://images.unsplash.com/photo-1590523278191-995cbcda646b?q=80&w=1000&auto=format&fit=crop" alt="Texture" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000 ease-out" />
-            </div>
-          </div>
-        </div>
+        </FadeIn>
       </div>
+
+      {/* Main Content: Image + Text */}
+      <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
+        <FadeIn delay={200}>
+          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl group h-[500px]">
+             <img 
+               src="https://images.unsplash.com/photo-1512958779360-18c65856be8b?q=80&w=1000&auto=format&fit=crop" 
+               alt="Organic Architecture" 
+               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+             />
+             <div className="absolute inset-0 bg-[#2C241B]/10 mix-blend-overlay"></div>
+          </div>
+        </FadeIn>
+        
+        <FadeIn delay={400}>
+          <div className="space-y-8 pl-0 md:pl-12 border-l border-[#BC9E73]/30">
+            <h3 className="font-serif text-3xl md:text-4xl text-[#2C241B] leading-tight">
+              Ksar Nujum — <br/><span className="italic text-[#BC9E73]">Palace of Stars</span>
+            </h3>
+            <p className="font-sans text-lg font-light leading-relaxed text-[#2C241B]/80">
+              A modern ksar: a community of extraordinary homes united by longevity, beauty, and the art of living well. 
+              Here, we redefine the very essence of luxury, moving away from opulence towards harmony.
+            </p>
+            <p className="font-sans text-lg font-light leading-relaxed text-[#2C241B]/80">
+              Far from the noise, we return to the essential—earth, light, and silence.
+            </p>
+            <MagneticButton variant="light">Discover the Story</MagneticButton>
+          </div>
+        </FadeIn>
+      </div>
+
+      {/* Three Pillars Cards */}
+      <div className="grid md:grid-cols-3 gap-6 mb-32">
+        {[
+          { icon: <Diamond size={32} strokeWidth={1} />, title: "Luxury", subtitle: "Craftsmanship in every detail", desc: "Materials sourced from the Atlas, shaped by master artisans into forms that breathe." },
+          { icon: <Activity size={32} strokeWidth={1} />, title: "Longevity", subtitle: "Wellness woven into daily life", desc: "A home designed to extend your healthspan with integrated bio-hacking amenities." },
+          { icon: <Hourglass size={32} strokeWidth={1} />, title: "Legacy", subtitle: "Homes for generations", desc: "A timeless architecture that grows more beautiful with age, preserving your story." }
+        ].map((pillar, i) => (
+          <FadeIn key={i} delay={i * 150}>
+            <div className="group relative p-8 h-full min-h-[300px] border border-[#BC9E73]/20 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 bg-white">
+              {/* Hover Background Effect */}
+              <div className="absolute inset-0 bg-[#BC9E73] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
+              
+              <div className="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                  <div className="text-[#BC9E73] group-hover:text-white transition-colors duration-500 mb-6">
+                    {pillar.icon}
+                  </div>
+                  <h4 className="font-serif text-3xl mb-2 text-[#2C241B] group-hover:text-white transition-colors duration-500">{pillar.title}</h4>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#BC9E73] group-hover:text-white/80 transition-colors duration-500 block mb-4">
+                    {pillar.subtitle}
+                  </span>
+                </div>
+                <p className="text-sm font-light text-[#2C241B]/70 leading-relaxed group-hover:text-white/90 transition-colors duration-500 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                  {pillar.desc}
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+        ))}
+      </div>
+
+      {/* Stylized Map Section */}
+      <FadeIn delay={600}>
+        <div className="relative w-full rounded-[3rem] overflow-hidden bg-[#E6E0D4] shadow-inner group">
+           {/* Map Background Image (Stylized) */}
+           <div className="absolute inset-0 z-0">
+             <img 
+               src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&q=80&w=2000" 
+               alt="Marrakech Map" 
+               className="w-full h-full object-cover opacity-20 mix-blend-multiply grayscale contrast-125 transition-transform duration-[20s] group-hover:scale-110"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-[#F5F2EB] via-transparent to-[#F5F2EB]/50"></div>
+           </div>
+           
+           <div className="relative z-10 flex flex-col items-center justify-center py-24 px-6 text-center">
+             <div className="bg-white/80 backdrop-blur-sm px-6 py-2 rounded-full border border-[#BC9E73]/20 mb-8">
+                <span className="text-[#BC9E73] text-xs font-bold tracking-[0.3em] uppercase">Marrakech • The Red City</span>
+             </div>
+             
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24 w-full max-w-5xl mt-8">
+               {[
+                 { time: "15 min", loc: "International Airport", sub: "Global Connectivity" },
+                 { time: "20 min", loc: "The Medina", sub: "Cultural Heart" },
+                 { time: "45 min", loc: "Atlas Mountains", sub: "Ski & Hiking" }
+               ].map((item, idx) => (
+                 <div key={idx} className="flex flex-col items-center group/marker">
+                   <div className="relative mb-6">
+                     <div className="w-4 h-4 bg-[#BC9E73] rounded-full animate-ping absolute inset-0 opacity-20"></div>
+                     <div className="w-16 h-16 rounded-full border border-[#2C241B] bg-[#F5F2EB] flex items-center justify-center relative z-10 group-hover/marker:bg-[#2C241B] group-hover/marker:text-[#F5F2EB] transition-colors duration-300 shadow-lg">
+                       <MapPin size={24} strokeWidth={1.5} />
+                     </div>
+                   </div>
+                   <span className="font-serif text-4xl md:text-5xl text-[#2C241B] mb-2">{item.time}</span>
+                   <span className="text-xs font-bold uppercase tracking-widest text-[#2C241B] mb-1">{item.loc}</span>
+                   <span className="font-serif italic text-gray-500 text-sm">{item.sub}</span>
+                 </div>
+               ))}
+             </div>
+           </div>
+        </div>
+      </FadeIn>
     </section>
   );
 };
@@ -351,7 +470,7 @@ export default function Home() {
     <div className="bg-[#F5F2EB] selection:bg-[#2C241B] selection:text-white cursor-none">
       <Cursor />
       <Hero />
-      <Philosophy />
+      <Vision />
       <Residences />
       <Longevity />
       <Footer />
