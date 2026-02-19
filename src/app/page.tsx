@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, ArrowUpRight, Play, MapPin, Diamond, Activity, Hourglass, X, Utensils, Coffee, Waves, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Play, MapPin, Diamond, Activity, Hourglass, X, Utensils, Coffee, Waves, Sparkles, Dumbbell, Flower, User, Droplets, Thermometer, Wind, Armchair } from 'lucide-react';
 
 /* ----------------------------------------------------------------------
    DESIGN SYSTEM & ASSETS
@@ -616,39 +616,219 @@ const Experience = () => {
 };
 
 const Longevity = () => {
-  return (
-    <section id="longevity" className="py-32 bg-[#F5F2EB] px-6 md:px-16">
-      <div className="border-l border-[#BC9E73] pl-8 md:pl-24 relative">
-        <span className="absolute -left-[5px] top-0 w-[9px] h-[9px] bg-[#BC9E73] rounded-full" />
-        <span className="text-[#BC9E73] text-xs font-bold tracking-[0.2em] uppercase mb-8 block">Longevity Clinic</span>
-        
-        <h2 className="font-serif text-5xl md:text-8xl text-[#2C241B] mb-16 leading-[0.9]">
-          The Science of <br/> <span className="italic text-[#BC9E73]">Time Travel</span>
-        </h2>
+  const [activeLevel, setActiveLevel] = useState('level-3');
+  const sectionRefs = useRef<{[key: string]: HTMLDivElement | null}>({});
 
-        <div className="grid md:grid-cols-3 gap-8">
+  // Scroll Spy Logic
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      Object.entries(sectionRefs.current).forEach(([id, ref]) => {
+        if (ref && ref.offsetTop <= scrollPosition && (ref.offsetTop + ref.offsetHeight) > scrollPosition) {
+          setActiveLevel(id);
+        }
+      });
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const el = sectionRefs.current[id];
+    if (el) {
+      const offset = 100;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = el.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section id="longevity" className="bg-[#F5F2EB] relative pb-32">
+      {/* Sticky Sidebar Navigation (Desktop Only) */}
+      <div className="hidden md:block fixed left-8 top-1/2 transform -translate-y-1/2 z-30 transition-opacity duration-500"
+           style={{ opacity: activeLevel ? 1 : 0, pointerEvents: activeLevel ? 'auto' : 'none' }}>
+        <div className="flex flex-col space-y-6">
           {[
-            { level: "Level -1", title: "Sanctuary", desc: "Subterranean spa, cryotherapy chambers, and sensory deprivation tanks sculpted from local stone." },
-            { level: "Level 0", title: "Diagnostics", desc: "Advanced bio-hacking lab, IV lounges, and genetic analysis center for personalized health." },
-            { level: "Level 1", title: "Performance", desc: "Panoramic technogym, altitude training, and yoga terrace facing the Atlas peaks." }
-          ].map((item, i) => (
-            <div key={i} className="group cursor-pointer">
-              <div className="h-[1px] w-full bg-[#2C241B]/10 mb-6 group-hover:bg-[#BC9E73] transition-colors duration-500" />
-              <span className="text-xs text-[#BC9E73] uppercase tracking-widest block mb-2">{item.level}</span>
-              <h3 className="font-serif text-3xl mb-4 group-hover:translate-x-2 transition-transform duration-300 text-[#2C241B]">{item.title}</h3>
-              <p className="text-sm text-gray-600 font-light leading-relaxed max-w-xs">{item.desc}</p>
-            </div>
+            { id: 'level-3', label: 'Level 3', sub: 'Panoramic Fitness' },
+            { id: 'level-1-2', label: 'Levels 1-2', sub: 'Treatments' },
+            { id: 'level-minus-1', label: 'Level -1', sub: 'Spa Sanctuary' }
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="group flex items-center space-x-4 text-left focus:outline-none"
+            >
+              <div className={`w-3 h-3 rounded-full border border-[#2C241B] transition-all duration-300 ${activeLevel === item.id ? 'bg-[#BC9E73] scale-125 border-[#BC9E73]' : 'bg-transparent group-hover:border-[#BC9E73]'}`}></div>
+              <div className={`transition-all duration-300 ${activeLevel === item.id ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0'}`}>
+                <span className="block text-[#2C241B] text-xs font-bold uppercase tracking-widest">{item.label}</span>
+                <span className="block text-gray-500 text-[10px] uppercase tracking-wider">{item.sub}</span>
+              </div>
+            </button>
           ))}
         </div>
+      </div>
 
-        <div className="mt-24 h-[400px] w-full rounded-[2rem] overflow-hidden relative">
-          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2000&auto=format&fit=crop" className="w-full h-full object-cover" alt="Clinic Interior" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <MagneticButton variant="light" className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white hover:text-[#2C241B]">
-              Explore Treatments
-            </MagneticButton>
+      {/* Hero / Header Section */}
+      <div className="relative h-[80vh] w-full overflow-hidden flex items-center justify-center">
+        <div className="absolute inset-0">
+          <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?q=80&w=2070&auto=format&fit=crop" alt="Longevity Clinic" className="w-full h-full object-cover grayscale-[20%]" />
+          <div className="absolute inset-0 bg-black/30"></div>
+        </div>
+        <div className="relative z-10 text-center text-[#F5F2EB] px-6 max-w-4xl">
+          <span className="block text-[#D4AF37] text-sm font-bold tracking-[0.3em] uppercase mb-6">Longevity Clinic</span>
+          <h2 className="font-serif text-6xl md:text-8xl mb-8 leading-none">The Science of <br/><span className="italic font-light">Time Travel</span></h2>
+          <p className="text-xl font-light text-white/90 leading-relaxed max-w-2xl mx-auto">
+            More than a spa. A comprehensive approach to longevity, combining ancestral Moroccan wellness with cutting-edge science. Three floors. One mission: help you live better, longer.
+          </p>
+          <div className="mt-12 animate-bounce">
+            <ArrowRight className="transform rotate-90 mx-auto text-[#D4AF37]" />
           </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-6 md:px-24 pt-24 space-y-32">
+        {/* Level 3: Panoramic Fitness */}
+        <div id="level-3" ref={el => { sectionRefs.current['level-3'] = el; }} className="scroll-mt-32">
+          <FadeIn>
+            <div className="flex flex-col md:flex-row gap-16 items-center">
+              <div className="md:w-1/2 relative h-[600px] rounded-[2rem] overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=2075&auto=format&fit=crop" alt="Panoramic Fitness" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+              </div>
+              <div className="md:w-1/2 space-y-8">
+                <div>
+                  <span className="text-[#BC9E73] text-xs font-bold tracking-[0.2em] uppercase block mb-2">Level 3</span>
+                  <h3 className="font-serif text-4xl md:text-5xl text-[#2C241B] mb-6">Panoramic Fitness</h3>
+                  <p className="font-serif italic text-2xl text-[#BC9E73] mb-6">&ldquo;Train with the Atlas as your horizon&rdquo;</p>
+                  <p className="text-gray-600 font-light leading-relaxed mb-8">
+                    The top floor is devoted to movement. Floor-to-ceiling windows frame the Atlas Mountains as you train with the finest Technogym Artis equipment and expert guidance.
+                  </p>
+                </div>
+                <div className="grid grid-cols-3 gap-4">
+                  {[
+                    { icon: <Dumbbell size={24}/>, label: 'Technogym' },
+                    { icon: <Flower size={24}/>, label: 'Yoga Terrace' },
+                    { icon: <User size={24}/>, label: 'Personal Training' }
+                  ].map((feat, i) => (
+                    <div key={i} className="flex flex-col items-center text-center p-4 border border-[#BC9E73]/20 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+                      <div className="text-[#BC9E73] mb-3">{feat.icon}</div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#2C241B]">{feat.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Levels 1-2: Treatments */}
+        <div id="level-1-2" ref={el => { sectionRefs.current['level-1-2'] = el; }} className="scroll-mt-32">
+          <FadeIn>
+            <div className="flex flex-col md:flex-row-reverse gap-16 items-center">
+              <div className="md:w-1/2 relative h-[700px] rounded-[2rem] overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=1974&auto=format&fit=crop" alt="Treatment Room" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+              </div>
+              <div className="md:w-1/2 space-y-8">
+                <div>
+                  <span className="text-[#BC9E73] text-xs font-bold tracking-[0.2em] uppercase block mb-2">Levels 1-2</span>
+                  <h3 className="font-serif text-4xl md:text-5xl text-[#2C241B] mb-6">Treatment Floors</h3>
+                  <p className="font-serif italic text-2xl text-[#BC9E73] mb-6">&ldquo;Science-backed protocols. Artisanal touch.&rdquo;</p>
+                  <p className="text-gray-600 font-light leading-relaxed mb-8">
+                    Two floors of private treatment suites where our practitioners blend traditional Moroccan therapies with modern longevity protocols.
+                  </p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl shadow-sm border border-[#BC9E73]/10">
+                  <h4 className="text-[#2C241B] font-serif text-xl mb-6">Signature Treatments</h4>
+                  <div className="grid md:grid-cols-2 gap-y-6 gap-x-8">
+                    {[
+                      { title: 'Longevity Assessment', desc: 'Biomarker testing + Protocol' },
+                      { title: 'Moroccan Hammam', desc: 'Traditional cleanse Ritual' },
+                      { title: 'IV Therapy', desc: 'NAD+, vitamins' },
+                      { title: 'Cryotherapy', desc: 'Full-body chamber' },
+                      { title: 'Aesthetic Medicine', desc: 'Non-invasive' },
+                      { title: 'Therapeutic Massage', desc: 'Deep tissue, sports' }
+                    ].map((item, i) => (
+                      <div key={i} className="flex gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#BC9E73] mt-2 flex-shrink-0"></div>
+                        <div>
+                          <p className="font-bold text-[#2C241B] text-sm uppercase tracking-wide">{item.title}</p>
+                          <p className="text-xs text-gray-500 font-light">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Level -1: Spa Sanctuary */}
+        <div id="level-minus-1" ref={el => { sectionRefs.current['level-minus-1'] = el; }} className="scroll-mt-32">
+          <FadeIn>
+            <div className="flex flex-col md:flex-row gap-16 items-center">
+              <div className="md:w-1/2 relative h-[600px] rounded-[2rem] overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop" alt="Spa Sanctuary" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-[#2C241B]/20"></div>
+              </div>
+              <div className="md:w-1/2 space-y-8">
+                <div>
+                  <span className="text-[#BC9E73] text-xs font-bold tracking-[0.2em] uppercase block mb-2">Level -1</span>
+                  <h3 className="font-serif text-4xl md:text-5xl text-[#2C241B] mb-6">The Spa Sanctuary</h3>
+                  <p className="font-serif italic text-2xl text-[#BC9E73] mb-6">&ldquo;Descend into stillness&rdquo;</p>
+                  <p className="text-gray-600 font-light leading-relaxed mb-8">
+                    Beneath the earth, time slows. Our subterranean spa draws from Morocco&apos;s ancient hammam tradition, reimagined for modern wellness seekers.
+                  </p>
+                </div>
+                <div className="grid grid-cols-5 gap-2">
+                  {[
+                    { icon: <Droplets size={20}/>, label: 'Hammam' },
+                    { icon: <Thermometer size={20}/>, label: 'Plunges' },
+                    { icon: <Waves size={20}/>, label: 'Sauna' },
+                    { icon: <Wind size={20}/>, label: 'Steam' },
+                    { icon: <Armchair size={20}/>, label: 'Rest' }
+                  ].map((feat, i) => (
+                    <div key={i} className="flex flex-col items-center text-center p-3 border border-[#BC9E73]/20 rounded-lg hover:bg-[#2C241B] hover:text-[#F5F2EB] group transition-all duration-300">
+                      <div className="text-[#BC9E73] mb-2 group-hover:text-[#D4AF37]">{feat.icon}</div>
+                      <span className="text-[10px] font-bold uppercase tracking-wide">{feat.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Resident Privileges Box */}
+        <FadeIn>
+          <div className="relative rounded-[2rem] overflow-hidden bg-[#2C241B] text-[#F5F2EB] p-8 md:p-16 text-center shadow-2xl">
+            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url("https://www.transparenttextures.com/patterns/cubes.png")` }}></div>
+            <div className="relative z-10 max-w-4xl mx-auto">
+              <span className="text-[#D4AF37] text-xs font-bold tracking-[0.3em] uppercase block mb-6">Resident Privileges</span>
+              <h3 className="font-serif text-3xl md:text-5xl mb-12">Elevate your wellbeing. Extend your prime.</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                {[
+                  { icon: '∞', title: 'Unlimited Access', sub: 'To Fitness & Spa' },
+                  { icon: '⭐', title: 'Priority Booking', sub: 'For Treatments' },
+                  { icon: '🎁', title: 'Annual Check', sub: 'Health Assessment' },
+                  { icon: '🏠', title: 'In-Villa', sub: 'Private Treatments' }
+                ].map((priv, i) => (
+                  <div key={i} className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-[#D4AF37] transition-colors duration-300">
+                    <div className="text-3xl mb-4">{priv.icon}</div>
+                    <h4 className="font-bold text-sm uppercase tracking-wider mb-1">{priv.title}</h4>
+                    <p className="text-xs text-white/50">{priv.sub}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col md:flex-row gap-6 justify-center">
+                <MagneticButton variant="dark">Enquire About Residences</MagneticButton>
+                <MagneticButton variant="outline">Book a Private Tour</MagneticButton>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
