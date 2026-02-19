@@ -323,7 +323,7 @@ const Hero = () => {
         style={{ transform: `translateY(${scrollY * 0.5}px)` }}
       >
         <img 
-          src="https://images.unsplash.com/photo-1544985336-397c88b0a996?q=80&w=2070&auto=format&fit=crop" 
+          src="/images/hero.jpg" 
           alt="Ksar Nujum Landscape" 
           className="w-full h-[120%] object-cover object-center sepia-[0.3]"
         />
