@@ -617,12 +617,23 @@ const Experience = () => {
 
 const Longevity = () => {
   const [activeLevel, setActiveLevel] = useState('level-3');
+  const [isInSection, setIsInSection] = useState(false);
   const sectionRefs = useRef<{[key: string]: HTMLDivElement | null}>({});
+  const longevitySectionRef = useRef<HTMLElement | null>(null);
 
-  // Scroll Spy Logic
+  // Scroll Spy Logic + Section Detection
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;
+      
+      // Check if we're inside the longevity section
+      if (longevitySectionRef.current) {
+        const sectionTop = longevitySectionRef.current.offsetTop;
+        const sectionBottom = sectionTop + longevitySectionRef.current.offsetHeight;
+        setIsInSection(scrollPosition >= sectionTop && scrollPosition <= sectionBottom);
+      }
+      
+      // Update active level
       Object.entries(sectionRefs.current).forEach(([id, ref]) => {
         if (ref && ref.offsetTop <= scrollPosition && (ref.offsetTop + ref.offsetHeight) > scrollPosition) {
           setActiveLevel(id);
@@ -630,6 +641,7 @@ const Longevity = () => {
       });
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -646,10 +658,10 @@ const Longevity = () => {
   };
 
   return (
-    <section id="longevity" className="bg-[#F5F2EB] relative pb-32">
-      {/* Sticky Sidebar Navigation (Desktop Only) */}
+    <section id="longevity" ref={longevitySectionRef} className="bg-[#F5F2EB] relative pb-32">
+      {/* Sticky Sidebar Navigation (Desktop Only) - Only visible in Longevity section */}
       <div className="hidden md:block fixed left-8 top-1/2 transform -translate-y-1/2 z-30 transition-opacity duration-500"
-           style={{ opacity: activeLevel ? 1 : 0, pointerEvents: activeLevel ? 'auto' : 'none' }}>
+           style={{ opacity: isInSection ? 1 : 0, pointerEvents: isInSection ? 'auto' : 'none' }}>
         <div className="flex flex-col space-y-6">
           {[
             { id: 'level-3', label: 'Level 3', sub: 'Panoramic Fitness' },
