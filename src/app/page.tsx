@@ -624,21 +624,36 @@ const Longevity = () => {
   // Scroll Spy Logic + Section Detection
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      const viewportMiddle = window.innerHeight / 2;
       
       // Check if we're inside the longevity section
       if (longevitySectionRef.current) {
-        const sectionTop = longevitySectionRef.current.offsetTop;
-        const sectionBottom = sectionTop + longevitySectionRef.current.offsetHeight;
-        setIsInSection(scrollPosition >= sectionTop && scrollPosition <= sectionBottom);
+        const rect = longevitySectionRef.current.getBoundingClientRect();
+        setIsInSection(rect.top <= viewportMiddle && rect.bottom >= viewportMiddle);
       }
       
-      // Update active level
+      // Update active level - find which subsection is closest to viewport middle
+      let closestId = 'level-3';
+      let closestDistance = Infinity;
+      
       Object.entries(sectionRefs.current).forEach(([id, ref]) => {
-        if (ref && ref.offsetTop <= scrollPosition && (ref.offsetTop + ref.offsetHeight) > scrollPosition) {
-          setActiveLevel(id);
+        if (ref) {
+          const rect = ref.getBoundingClientRect();
+          const sectionMiddle = rect.top + rect.height / 2;
+          const distance = Math.abs(sectionMiddle - viewportMiddle);
+          
+          // Check if viewport middle is within section bounds OR find closest
+          if (rect.top <= viewportMiddle && rect.bottom >= viewportMiddle) {
+            closestId = id;
+            closestDistance = 0;
+          } else if (distance < closestDistance && closestDistance !== 0) {
+            closestDistance = distance;
+            closestId = id;
+          }
         }
       });
+      
+      setActiveLevel(closestId);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
