@@ -380,13 +380,20 @@ const Vision = () => {
       {/* Main Content: Image + Text */}
       <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
         <FadeIn delay={200}>
-          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl group h-[500px]">
+          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl group h-[500px] cursor-pointer">
+             {/* Base image */}
              <img 
-               src="https://images.unsplash.com/photo-1512958779360-18c65856be8b?q=80&w=1000&auto=format&fit=crop" 
-               alt="Organic Architecture" 
-               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+               src="/images/courtyard-1.png" 
+               alt="Ksar Nujum Courtyard" 
+               className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out group-hover:scale-105" 
              />
-             <div className="absolute inset-0 bg-[#2C241B]/10 mix-blend-overlay"></div>
+             {/* Hover image with dissolve effect */}
+             <img 
+               src="/images/courtyard-2.png" 
+               alt="Ksar Nujum Courtyard" 
+               className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-1000 ease-in-out group-hover:scale-105" 
+             />
+             <div className="absolute inset-0 bg-[#2C241B]/10 mix-blend-overlay pointer-events-none"></div>
           </div>
         </FadeIn>
         
