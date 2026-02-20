@@ -195,11 +195,11 @@ const Cursor = () => {
   return (
     <>
       <div 
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-[#2C241B] pointer-events-none z-[100] transition-transform duration-100 ease-out hidden md:block"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-[#2C241B] pointer-events-none z-[9999] transition-transform duration-100 ease-out hidden md:block"
         style={{ transform: `translate(${x - 16}px, ${y - 16}px)` }}
       />
       <div 
-        className="fixed top-0 left-0 w-2 h-2 bg-[#2C241B] rounded-full pointer-events-none z-[100] transition-transform duration-75 ease-out hidden md:block"
+        className="fixed top-0 left-0 w-2 h-2 bg-[#2C241B] rounded-full pointer-events-none z-[9999] transition-transform duration-75 ease-out hidden md:block"
         style={{ transform: `translate(${x - 4}px, ${y - 4}px)` }}
       />
     </>
