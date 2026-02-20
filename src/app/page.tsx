@@ -901,38 +901,51 @@ const Longevity = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#BC9E73] text-[#2C241B] pt-32 pb-12 px-6 md:px-16 border-t border-[#2C241B]/10">
-      <div className="grid md:grid-cols-2 gap-16 mb-24">
-        <div>
-          <h2 className="font-serif text-6xl md:text-7xl mb-8">Begin Your<br/>Legacy</h2>
-          <div className="flex gap-4">
-             <input type="email" placeholder="Email Address" className="bg-transparent border-b border-[#2C241B]/30 py-4 w-full md:w-96 outline-none focus:border-white transition-colors placeholder:text-[#2C241B]/40 font-light text-[#2C241B]" />
-             <button className="text-white uppercase tracking-widest text-xs hover:text-[#2C241B] transition-colors font-medium">Submit</button>
+    <footer id="contact" className="bg-[#BC9E73] text-[#2C241B] pt-24 pb-12 px-6 md:px-16">
+      <div className="max-w-6xl mx-auto">
+        {/* Main Footer Content */}
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
+          {/* Brand */}
+          <div>
+            <h3 className="font-serif text-3xl mb-4">KSAR NUJUM</h3>
+            <p className="text-[#2C241B]/70 font-light text-sm leading-relaxed">
+              An organic architectural sanctuary in Marrakech where luxury meets longevity.
+            </p>
           </div>
-        </div>
-        <div className="grid grid-cols-2 gap-12 font-light text-sm text-[#2C241B]/80">
+          
+          {/* Navigation */}
+          <div>
+            <h4 className="text-[#2C241B] uppercase tracking-widest text-xs mb-6 font-bold">Explore</h4>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#vision" className="hover:text-white transition-colors">Vision</a></li>
+              <li><a href="#residences" className="hover:text-white transition-colors">Residences</a></li>
+              <li><a href="#longevity" className="hover:text-white transition-colors">Longevity Clinic</a></li>
+              <li><a href="#experience" className="hover:text-white transition-colors">Experience</a></li>
+            </ul>
+          </div>
+          
+          {/* Contact */}
           <div>
             <h4 className="text-[#2C241B] uppercase tracking-widest text-xs mb-6 font-bold">Contact</h4>
-            <p className="hover:text-white transition-colors cursor-pointer">private@ksarnujum.com</p>
-            <p className="hover:text-white transition-colors cursor-pointer">+212 5 24 00 00 00</p>
-            <p className="mt-4">Route d&apos;Amizmiz, Km 12<br/>Marrakech, Morocco</p>
-          </div>
-          <div>
-             <h4 className="text-[#2C241B] uppercase tracking-widest text-xs mb-6 font-bold">Menu</h4>
-             <ul className="space-y-2">
-               <li className="hover:text-white cursor-pointer transition-colors">Residences</li>
-               <li className="hover:text-white cursor-pointer transition-colors">Clinic</li>
-               <li className="hover:text-white cursor-pointer transition-colors">Philosophy</li>
-               <li className="hover:text-white cursor-pointer transition-colors">Press</li>
-             </ul>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a href="mailto:contact@darsociety.com" className="hover:text-white transition-colors">
+                  contact@darsociety.com
+                </a>
+              </li>
+              <li className="text-[#2C241B]/70">
+                Marrakech, Morocco
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-      
-      <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#2C241B]/10 text-[10px] uppercase tracking-[0.2em] text-[#2C241B]/50">
-        <p>Ksar Nujum © 2024</p>
-        <div className="flex gap-8 mt-4 md:mt-0">
-          <span>Designed by Canvas</span>
+        
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[#2C241B]/20 text-xs text-[#2C241B]/60">
+          <p>© 2026 Ksar Nujum. All rights reserved.</p>
+          <p className="mt-4 md:mt-0">
+            A <a href="https://darsociety.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Dar Society</a> development
+          </p>
         </div>
       </div>
     </footer>
