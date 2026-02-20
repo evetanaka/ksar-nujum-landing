@@ -303,9 +303,6 @@ const ExperienceModal = ({ item, onClose }: { item: ExperienceItem | null; onClo
             ))}
           </div>
 
-          <div>
-            <MagneticButton variant="light" className="w-full md:w-auto">Make a Reservation</MagneticButton>
-          </div>
         </div>
       </div>
     </div>
