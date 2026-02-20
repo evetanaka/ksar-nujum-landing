@@ -742,7 +742,7 @@ const Longevity = () => {
       {/* Hero / Header Section */}
       <div className="relative h-[80vh] w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0">
-          <img src="/images/longevity-banner.png" alt="Longevity Clinic" className="w-full h-full object-cover object-top scale-110" />
+          <img src="/images/longevity-banner.png" alt="Longevity Clinic" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="relative z-10 text-center text-[#F5F2EB] px-6 max-w-4xl">
