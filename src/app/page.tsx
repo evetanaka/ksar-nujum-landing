@@ -838,7 +838,7 @@ const Longevity = () => {
           <FadeIn>
             <div className="flex flex-col md:flex-row gap-16 items-center">
               <div className="md:w-1/2 relative h-[600px] rounded-[2rem] overflow-hidden group">
-                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop" alt="Spa Sanctuary" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <img src="/images/spa-sanctuary.png" alt="Spa Sanctuary" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-[#2C241B]/20"></div>
               </div>
               <div className="md:w-1/2 space-y-8">
