@@ -418,7 +418,7 @@ const Vision = () => {
       <div className="grid md:grid-cols-3 gap-6 mb-32">
         {[
           { icon: <Diamond size={32} strokeWidth={1} />, title: "Luxury", subtitle: "Craftsmanship in every detail", desc: "Materials sourced from the Atlas, shaped by master artisans into forms that breathe.", hoverImage: "/images/luxury-artisan.jpg" },
-          { icon: <Activity size={32} strokeWidth={1} />, title: "Longevity", subtitle: "Wellness woven into daily life", desc: "A home designed to extend your healthspan with integrated bio-hacking amenities." },
+          { icon: <Activity size={32} strokeWidth={1} />, title: "Longevity", subtitle: "Wellness woven into daily life", desc: "A home designed to extend your healthspan with integrated bio-hacking amenities.", hoverImage: "/images/longevity-redlight.png" },
           { icon: <Hourglass size={32} strokeWidth={1} />, title: "Legacy", subtitle: "Homes for generations", desc: "A timeless architecture that grows more beautiful with age, preserving your story." }
         ].map((pillar, i) => (
           <FadeIn key={i} delay={i * 150}>
