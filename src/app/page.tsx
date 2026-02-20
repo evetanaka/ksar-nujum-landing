@@ -59,7 +59,7 @@ const EXPERIENCES = [
     title: 'Gastronomy',
     subtitle: 'From Michelin stars to farm-fresh grills',
     icon: <Utensils size={24} />,
-    image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop',
+    image: '/images/gastronomy.jpg',
     hoverList: ['The Signature Restaurant', 'The Garden Table', 'Private Chef Service'],
     cta: 'Explore Dining',
     action: 'modal' as const,
