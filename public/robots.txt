@@ -1,0 +1,6 @@
+# Robots.txt for Ksar Nujum
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nujum.darsociety.com/sitemap.xml
