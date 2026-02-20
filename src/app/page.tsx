@@ -47,8 +47,8 @@ const VILLAS = [
     name: "AGAFAY",
     tagline: "Earthborn Architecture",
     price: "From €1.5M",
-    image: "https://images.unsplash.com/photo-1539667468225-eebb663053e6?q=80&w=2055&auto=format&fit=crop",
-    interiorImage: "https://images.unsplash.com/photo-1539667468225-eebb663053e6?q=80&w=2055&auto=format&fit=crop",
+    image: "/images/villas/agafay-exterior.jpg",
+    interiorImage: "/images/villas/agafay-interior.png",
     specs: "320m² • 3 Suites"
   }
 ];
