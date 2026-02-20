@@ -111,7 +111,7 @@ const EXPERIENCES = [
     title: 'Resort Living',
     subtitle: '365-day hotel service included',
     icon: <Waves size={24} />,
-    image: 'https://images.unsplash.com/photo-1562329347-6a2760c634cd?q=80&w=2069&auto=format&fit=crop',
+    image: '/images/resort-living.jpg',
     hoverList: ['24/7 Concierge', 'Housekeeping', 'Pool & Gardens'],
     cta: 'View Services',
     action: 'modal' as const,
