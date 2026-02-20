@@ -516,9 +516,9 @@ const Residences = () => {
         <span className="text-white text-xs tracking-[0.2em] uppercase hidden md:block">Select your sanctuary</span>
       </div>
 
-      <div className="flex flex-col md:flex-row h-[80vh]">
+      <div className="flex flex-col md:flex-row min-h-[80vh] md:h-[80vh]">
         {/* Interactive List */}
-        <div className="md:w-5/12 flex flex-col justify-center border-t border-[#2C241B]/10">
+        <div className="md:w-5/12 flex flex-col justify-center border-t border-[#2C241B]/10 order-2 md:order-1">
           {VILLAS.map((villa, index) => (
             <div 
               key={villa.id}
@@ -541,7 +541,7 @@ const Residences = () => {
         </div>
 
         {/* Visual Preview */}
-        <div className="md:w-7/12 relative overflow-hidden bg-[#A88B60]">
+        <div className="w-full h-[50vh] md:h-auto md:w-7/12 relative overflow-hidden bg-[#A88B60] order-1 md:order-2">
           {VILLAS.map((villa, index) => (
             <div 
               key={villa.id}
@@ -847,7 +847,7 @@ const Longevity = () => {
                     Beneath the earth, time slows. Our subterranean spa draws from Morocco&apos;s ancient hammam tradition, reimagined for modern wellness seekers.
                   </p>
                 </div>
-                <div className="grid grid-cols-5 gap-2">
+                <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
                   {[
                     { icon: <Droplets size={20}/>, label: 'Hammam' },
                     { icon: <Thermometer size={20}/>, label: 'Plunges' },
