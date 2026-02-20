@@ -419,7 +419,7 @@ const Vision = () => {
         {[
           { icon: <Diamond size={32} strokeWidth={1} />, title: "Luxury", subtitle: "Craftsmanship in every detail", desc: "Materials sourced from the Atlas, shaped by master artisans into forms that breathe.", hoverImage: "/images/luxury-artisan.jpg" },
           { icon: <Activity size={32} strokeWidth={1} />, title: "Longevity", subtitle: "Wellness woven into daily life", desc: "A home designed to extend your healthspan with integrated bio-hacking amenities.", hoverImage: "/images/longevity-redlight.png" },
-          { icon: <Hourglass size={32} strokeWidth={1} />, title: "Legacy", subtitle: "Homes for generations", desc: "A timeless architecture that grows more beautiful with age, preserving your story." }
+          { icon: <Hourglass size={32} strokeWidth={1} />, title: "Legacy", subtitle: "Homes for generations", desc: "A timeless architecture that grows more beautiful with age, preserving your story.", hoverImage: "/images/legacy-courtyard.png" }
         ].map((pillar, i) => (
           <FadeIn key={i} delay={i * 150}>
             <div className="group relative p-8 h-full min-h-[300px] border border-[#BC9E73]/20 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 bg-white">
