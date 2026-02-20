@@ -417,14 +417,23 @@ const Vision = () => {
       {/* Three Pillars Cards */}
       <div className="grid md:grid-cols-3 gap-6 mb-32">
         {[
-          { icon: <Diamond size={32} strokeWidth={1} />, title: "Luxury", subtitle: "Craftsmanship in every detail", desc: "Materials sourced from the Atlas, shaped by master artisans into forms that breathe." },
+          { icon: <Diamond size={32} strokeWidth={1} />, title: "Luxury", subtitle: "Craftsmanship in every detail", desc: "Materials sourced from the Atlas, shaped by master artisans into forms that breathe.", hoverImage: "/images/luxury-artisan.jpg" },
           { icon: <Activity size={32} strokeWidth={1} />, title: "Longevity", subtitle: "Wellness woven into daily life", desc: "A home designed to extend your healthspan with integrated bio-hacking amenities." },
           { icon: <Hourglass size={32} strokeWidth={1} />, title: "Legacy", subtitle: "Homes for generations", desc: "A timeless architecture that grows more beautiful with age, preserving your story." }
         ].map((pillar, i) => (
           <FadeIn key={i} delay={i * 150}>
             <div className="group relative p-8 h-full min-h-[300px] border border-[#BC9E73]/20 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 bg-white">
               {/* Hover Background Effect */}
-              <div className="absolute inset-0 bg-[#BC9E73] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
+              {pillar.hoverImage ? (
+                <>
+                  <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <img src={pillar.hoverImage} alt="" className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-[#2C241B]/60"></div>
+                  </div>
+                </>
+              ) : (
+                <div className="absolute inset-0 bg-[#BC9E73] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
+              )}
               
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
