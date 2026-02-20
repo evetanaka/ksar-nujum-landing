@@ -21,6 +21,7 @@ const VILLAS = [
     tagline: "The Mountain Sanctum",
     price: "From €2.5M",
     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop",
+    interiorImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop",
     specs: "500m² • 5 Suites"
   },
   {
@@ -29,6 +30,7 @@ const VILLAS = [
     tagline: "Botanical Poetry",
     price: "From €2.1M",
     image: "https://images.unsplash.com/photo-1590059390047-6dfdc09cc441?q=80&w=2069&auto=format&fit=crop",
+    interiorImage: "https://images.unsplash.com/photo-1590059390047-6dfdc09cc441?q=80&w=2069&auto=format&fit=crop",
     specs: "450m² • 4 Suites"
   },
   {
@@ -37,6 +39,7 @@ const VILLAS = [
     tagline: "Water & Reflection",
     price: "From €1.8M",
     image: "https://images.unsplash.com/photo-1572295283477-8d0739f50625?q=80&w=2070&auto=format&fit=crop",
+    interiorImage: "https://images.unsplash.com/photo-1572295283477-8d0739f50625?q=80&w=2070&auto=format&fit=crop",
     specs: "400m² • 4 Suites"
   },
   {
@@ -45,6 +48,7 @@ const VILLAS = [
     tagline: "Earthborn Architecture",
     price: "From €1.5M",
     image: "https://images.unsplash.com/photo-1539667468225-eebb663053e6?q=80&w=2055&auto=format&fit=crop",
+    interiorImage: "https://images.unsplash.com/photo-1539667468225-eebb663053e6?q=80&w=2055&auto=format&fit=crop",
     specs: "320m² • 3 Suites"
   }
 ];
@@ -500,6 +504,13 @@ const Vision = () => {
 
 const Residences = () => {
   const [activeVilla, setActiveVilla] = useState(0);
+  const [showInterior, setShowInterior] = useState(false);
+
+  // Reset to exterior when changing villa
+  const handleVillaChange = (index: number) => {
+    setActiveVilla(index);
+    setShowInterior(false);
+  };
 
   return (
     <section id="residences" className="py-24 bg-[#BC9E73] text-[#2C241B] px-6 md:px-0 relative">
@@ -514,7 +525,7 @@ const Residences = () => {
           {VILLAS.map((villa, index) => (
             <div 
               key={villa.id}
-              onMouseEnter={() => setActiveVilla(index)}
+              onMouseEnter={() => handleVillaChange(index)}
               className={`group flex items-center justify-between py-10 px-8 md:px-16 border-b border-[#2C241B]/10 cursor-pointer transition-all duration-500 ${activeVilla === index ? 'bg-[#2C241B]/5' : 'hover:bg-[#2C241B]/5'}`}
             >
               <div>
@@ -539,14 +550,28 @@ const Residences = () => {
               key={villa.id}
               className={`absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] ${activeVilla === index ? 'opacity-100 scale-100' : 'opacity-0 scale-110'}`}
             >
-              <img src={villa.image} alt={villa.name} className="w-full h-full object-cover mix-blend-multiply opacity-90" />
+              {/* Exterior Image */}
+              <img 
+                src={villa.image} 
+                alt={`${villa.name} Exterior`} 
+                className={`absolute inset-0 w-full h-full object-cover mix-blend-multiply transition-opacity duration-700 ${showInterior ? 'opacity-0' : 'opacity-90'}`} 
+              />
+              {/* Interior Image */}
+              <img 
+                src={villa.interiorImage} 
+                alt={`${villa.name} Interior`} 
+                className={`absolute inset-0 w-full h-full object-cover mix-blend-multiply transition-opacity duration-700 ${showInterior ? 'opacity-90' : 'opacity-0'}`} 
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[#5D4037]/80 via-transparent to-transparent" />
               
               <div className="absolute bottom-12 left-12 md:left-24 max-w-md text-[#F5F2EB]">
                 <p className="text-white font-serif italic text-2xl mb-2">{villa.tagline}</p>
                 <p className="text-white/80 font-light text-sm leading-relaxed mb-6">{villa.specs} — {villa.price}</p>
-                <button className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] hover:text-[#D4AF37] transition-colors">
-                  View Floorplans <ArrowUpRight size={14} />
+                <button 
+                  onClick={() => setShowInterior(!showInterior)}
+                  className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] hover:text-[#D4AF37] transition-colors"
+                >
+                  {showInterior ? 'View Exterior' : 'View Interiors'} <ArrowUpRight size={14} />
                 </button>
               </div>
             </div>
