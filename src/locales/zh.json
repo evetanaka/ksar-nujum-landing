@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "lang": "zh",
+    "dir": "ltr"
+  },
+  "nav": {
+    "vision": "愿景",
+    "residences": "住宅",
+    "longevity": "长寿",
+    "experience": "体验",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "brand": "星辰宫殿",
+    "headline1": "传承相遇",
+    "headline2": "长寿之道",
+    "tagline": "马拉喀什的有机建筑圣所。极致奢华与永恒青春科学在此交融。",
+    "playVideo": "观看视频"
+  },
+  "vision": {
+    "sectionLabel": "愿景",
+    "quote": "「时间随你的节奏而流动的圣所」",
+    "title": "Ksar Nujum —",
+    "titleAccent": "星辰宫殿",
+    "description1": "现代化的城堡：一个由长寿、美学和生活艺术联结的非凡家园社区。在这里，我们重新定义奢华的本质，从繁华走向和谐。",
+    "description2": "远离喧嚣，回归本质——大地、光明与宁静。",
+    "cta": "探索故事",
+    "pillars": {
+      "luxury": {
+        "title": "奢华",
+        "subtitle": "每个细节都是匠心",
+        "desc": "源自阿特拉斯山脉的材料，由大师工匠塑造成会呼吸的形态。"
+      },
+      "longevity": {
+        "title": "长寿",
+        "subtitle": "健康融入日常生活",
+        "desc": "配备生物黑客技术设施，专为延长健康寿命而设计的家。"
+      },
+      "legacy": {
+        "title": "传承",
+        "subtitle": "世代相传的家园",
+        "desc": "永恒的建筑随岁月愈发美丽，守护您的故事。"
+      }
+    },
+    "map": {
+      "label": "马拉喀什 • 红色之城",
+      "airport": {
+        "time": "15分钟",
+        "location": "国际机场",
+        "sub": "全球连接"
+      },
+      "medina": {
+        "time": "20分钟",
+        "location": "麦地那",
+        "sub": "文化中心"
+      },
+      "atlas": {
+        "time": "45分钟",
+        "location": "阿特拉斯山脉",
+        "sub": "滑雪与徒步"
+      }
+    }
+  },
+  "residences": {
+    "title": "庄园",
+    "subtitle": "选择您的圣所",
+    "viewInteriors": "查看室内",
+    "viewExterior": "查看外观",
+    "villas": {
+      "atlas": {
+        "name": "阿特拉斯",
+        "tagline": "山间圣殿",
+        "price": "起价150万欧元",
+        "specs": "500平方米 • 5套房"
+      },
+      "majorelle": {
+        "name": "马约雷尔",
+        "tagline": "植物诗篇",
+        "price": "起价135万欧元",
+        "specs": "450平方米 • 4套房"
+      },
+      "menara": {
+        "name": "梅纳拉",
+        "tagline": "水与倒影",
+        "price": "起价120万欧元",
+        "specs": "400平方米 • 4套房"
+      },
+      "agafay": {
+        "name": "阿加法伊",
+        "tagline": "源自大地的建筑",
+        "price": "起价100万欧元",
+        "specs": "320平方米 • 3套房"
+      }
+    }
+  },
+  "experience": {
+    "sectionLabel": "体验",
+    "headline": "「像贵宾一样生活。",
+    "headlineAccent": "每一天。」",
+    "gastronomy": {
+      "title": "美食",
+      "subtitle": "从米其林星级到农场烧烤",
+      "hoverList": ["招牌餐厅", "花园餐桌", "私人厨师服务"],
+      "cta": "探索美食",
+      "modal": {
+        "headline": "双重美食之旅",
+        "description": "在星辰宫殿，用餐是对风土的探索。我们的米其林星级厨师以前卫技术重新诠释摩洛哥经典，而我们的有机花园为从农场到餐桌的烧烤注入灵魂。",
+        "features": [
+          { "title": "招牌餐厅", "desc": "搭配珍稀佳酿的高级品鉴菜单。" },
+          { "title": "花园餐桌", "desc": "在有机菜园中心的露天烧烤。" },
+          { "title": "别墅用餐", "desc": "专属于您的私人厨师和侍酒师。" }
+        ]
+      }
+    },
+    "longevityClinic": {
+      "title": "长寿诊所",
+      "subtitle": "科学与宁静的相遇",
+      "hoverList": ["400平方米健康圣所", "3级护理", "生物黑客实验室"],
+      "cta": "探索"
+    },
+    "dailyRituals": {
+      "title": "日常仪式",
+      "subtitle": "星辰宫殿的社交中心",
+      "hoverList": ["精品咖啡", "手工烘焙坊", "联合办公空间"],
+      "cta": "查看菜单",
+      "modal": {
+        "headline": "晨间仪式",
+        "description": "在星辰咖啡馆开始您的一天。无论是单一产地的手冲咖啡还是新鲜出炉的酸面包，我们相信简单事物完美呈现的奢华。",
+        "features": [
+          { "title": "烘焙坊", "desc": "直接从可持续农场采购的咖啡豆。" },
+          { "title": "面包房", "desc": "摩洛哥风味的法式糕点，每小时新鲜出炉。" },
+          { "title": "露台", "desc": "阿特拉斯山脉的全景视野，伴您晨读。" }
+        ]
+      }
+    },
+    "resortLiving": {
+      "title": "度假式生活",
+      "subtitle": "365天酒店服务全包",
+      "hoverList": ["24/7礼宾服务", "客房服务", "泳池与花园"],
+      "cta": "查看服务",
+      "modal": {
+        "headline": "轻松拥有",
+        "description": "在自己家中像贵宾一样生活。我们专属的团队负责每一个细节，从您抵达前备好冰箱到管理您不在时的租金收益。",
+        "features": [
+          { "title": "礼宾服务", "desc": "24/7管理航班、游览和预订。" },
+          { "title": "客房服务", "desc": "根据您的偏好提供每日或每周服务。" },
+          { "title": "维护", "desc": "泳池、花园和技术支持全包。" }
+        ]
+      }
+    }
+  },
+  "longevity": {
+    "sectionLabel": "长寿诊所",
+    "headline": "时光旅行的",
+    "headlineAccent": "科学",
+    "intro": "不只是水疗。将摩洛哥传统养生与尖端科学相结合的全面长寿方案。三层楼。一个使命：帮助您活得更好、更久。",
+    "levels": {
+      "level3": {
+        "label": "第三层",
+        "sub": "全景健身",
+        "title": "全景健身",
+        "quote": "「以阿特拉斯为地平线训练」",
+        "description": "顶层专注于运动。落地窗将阿特拉斯山脉收入眼底，您可使用顶级Technogym Artis设备并获得专家指导进行训练。",
+        "features": ["Technogym", "瑜伽露台", "私人训练"]
+      },
+      "level1-2": {
+        "label": "第一二层",
+        "sub": "护理",
+        "title": "护理楼层",
+        "quote": "「科学支撑的方案。匠心的触感。」",
+        "description": "两层私人护理套房，我们的专业人员将摩洛哥传统疗法与现代长寿方案相融合。",
+        "treatmentsTitle": "招牌护理",
+        "treatments": [
+          { "title": "长寿评估", "desc": "生物标志物检测 + 方案" },
+          { "title": "摩洛哥浴", "desc": "传统净化仪式" },
+          { "title": "静脉疗法", "desc": "NAD+、维生素" },
+          { "title": "冷冻疗法", "desc": "全身冷冻舱" },
+          { "title": "美容医学", "desc": "非侵入性" },
+          { "title": "治疗按摩", "desc": "深层组织、运动按摩" }
+        ]
+      },
+      "levelMinus1": {
+        "label": "地下一层",
+        "sub": "水疗圣所",
+        "title": "水疗圣所",
+        "quote": "「沉入静谧」",
+        "description": "地下，时间放慢脚步。我们的地下水疗汲取摩洛哥古老浴场传统，为现代养生爱好者重新演绎。",
+        "features": ["土耳其浴", "冷水池", "桑拿", "蒸汽", "休息"]
+      }
+    },
+    "privileges": {
+      "sectionLabel": "住户特权",
+      "headline": "提升您的健康。延长您的巅峰。",
+      "items": [
+        { "icon": "∞", "title": "无限使用", "sub": "健身与水疗" },
+        { "icon": "⭐", "title": "优先预约", "sub": "护理项目" },
+        { "icon": "🎁", "title": "年度检查", "sub": "健康评估" },
+        { "icon": "🏠", "title": "别墅内", "sub": "私人护理" }
+      ],
+      "cta1": "咨询住宅信息",
+      "cta2": "预约私人参观"
+    }
+  },
+  "footer": {
+    "description": "马拉喀什的有机建筑圣所，奢华与长寿在此相遇。",
+    "exploreTitle": "探索",
+    "contactTitle": "联系方式",
+    "location": "摩洛哥马拉喀什",
+    "copyright": "© 2026 星辰宫殿. 版权所有.",
+    "developedBy": "Dar Society 开发"
+  },
+  "passwordGate": {
+    "title": "星辰宫殿",
+    "subtitle": "仅限私人访问",
+    "placeholder": "输入访问代码",
+    "invalidCode": "代码无效。请重试。",
+    "enter": "进入",
+    "byInvitation": "仅限受邀"
+  }
+}

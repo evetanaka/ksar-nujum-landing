@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "lang": "en",
+    "dir": "ltr"
+  },
+  "nav": {
+    "vision": "Vision",
+    "residences": "Residences",
+    "longevity": "Longevity",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "brand": "KSAR NUJUM",
+    "headline1": "Legacy Meets",
+    "headline2": "Longevity",
+    "tagline": "An organic architectural sanctuary in Marrakech. Where ultra-luxury living integrates with the science of eternal youth.",
+    "playVideo": "Play Video"
+  },
+  "vision": {
+    "sectionLabel": "The Vision",
+    "quote": "\"A sanctuary where time bends to your rhythm\"",
+    "title": "Ksar Nujum —",
+    "titleAccent": "Palace of Stars",
+    "description1": "A modern ksar: a community of extraordinary homes united by longevity, beauty, and the art of living well. Here, we redefine the very essence of luxury, moving away from opulence towards harmony.",
+    "description2": "Far from the noise, we return to the essential—earth, light, and silence.",
+    "cta": "Discover the Story",
+    "pillars": {
+      "luxury": {
+        "title": "Luxury",
+        "subtitle": "Craftsmanship in every detail",
+        "desc": "Materials sourced from the Atlas, shaped by master artisans into forms that breathe."
+      },
+      "longevity": {
+        "title": "Longevity",
+        "subtitle": "Wellness woven into daily life",
+        "desc": "A home designed to extend your healthspan with integrated bio-hacking amenities."
+      },
+      "legacy": {
+        "title": "Legacy",
+        "subtitle": "Homes for generations",
+        "desc": "A timeless architecture that grows more beautiful with age, preserving your story."
+      }
+    },
+    "map": {
+      "label": "Marrakech • The Red City",
+      "airport": {
+        "time": "15 min",
+        "location": "International Airport",
+        "sub": "Global Connectivity"
+      },
+      "medina": {
+        "time": "20 min",
+        "location": "The Medina",
+        "sub": "Cultural Heart"
+      },
+      "atlas": {
+        "time": "45 min",
+        "location": "Atlas Mountains",
+        "sub": "Ski & Hiking"
+      }
+    }
+  },
+  "residences": {
+    "title": "The Estates",
+    "subtitle": "Select your sanctuary",
+    "viewInteriors": "View Interiors",
+    "viewExterior": "View Exterior",
+    "villas": {
+      "atlas": {
+        "name": "ATLAS",
+        "tagline": "The Mountain Sanctum",
+        "price": "From €1.5M",
+        "specs": "500m² • 5 Suites"
+      },
+      "majorelle": {
+        "name": "MAJORELLE",
+        "tagline": "Botanical Poetry",
+        "price": "From €1.35M",
+        "specs": "450m² • 4 Suites"
+      },
+      "menara": {
+        "name": "MENARA",
+        "tagline": "Water & Reflection",
+        "price": "From €1.2M",
+        "specs": "400m² • 4 Suites"
+      },
+      "agafay": {
+        "name": "AGAFAY",
+        "tagline": "Earthborn Architecture",
+        "price": "From €1M",
+        "specs": "320m² • 3 Suites"
+      }
+    }
+  },
+  "experience": {
+    "sectionLabel": "The Experience",
+    "headline": "\"Live like a guest.",
+    "headlineAccent": "Every day.\"",
+    "gastronomy": {
+      "title": "Gastronomy",
+      "subtitle": "From Michelin stars to farm-fresh grills",
+      "hoverList": ["The Signature Restaurant", "The Garden Table", "Private Chef Service"],
+      "cta": "Explore Dining",
+      "modal": {
+        "headline": "Two Culinary Journeys",
+        "description": "At Ksar Nujum, dining is an exploration of terroir. Our Michelin-starred chef reinterprets Moroccan classics with avant-garde techniques, while our organic garden provides the soul for our farm-to-table grills.",
+        "features": [
+          { "title": "The Signature", "desc": "Fine dining tasting menus paired with rare vintages." },
+          { "title": "The Garden Table", "desc": "Al fresco grilling in the heart of our organic potager." },
+          { "title": "In-Villa Dining", "desc": "A private chef and sommelier, exclusively for you." }
+        ]
+      }
+    },
+    "longevityClinic": {
+      "title": "Longevity Clinic",
+      "subtitle": "Science meets serenity",
+      "hoverList": ["400m² Wellness Sanctuary", "3 Levels of Care", "Bio-hacking Lab"],
+      "cta": "Discover"
+    },
+    "dailyRituals": {
+      "title": "Daily Rituals",
+      "subtitle": "The social heart of Ksar Nujum",
+      "hoverList": ["Specialty Coffee", "Artisan Bakery", "Co-working Lounge"],
+      "cta": "View Menu",
+      "modal": {
+        "headline": "The Morning Ritual",
+        "description": "Start your day at The Nujum Café. Whether it's a single-origin pour-over or a warm sourdough loaf fresh from the oven, we believe in the luxury of simple things done perfectly.",
+        "features": [
+          { "title": "The Roastery", "desc": "Beans sourced directly from sustainable farms." },
+          { "title": "The Bakery", "desc": "French pastries with a Moroccan twist, baked hourly." },
+          { "title": "The Terrace", "desc": "Panoramic views of the Atlas for your morning read." }
+        ]
+      }
+    },
+    "resortLiving": {
+      "title": "Resort Living",
+      "subtitle": "365-day hotel service included",
+      "hoverList": ["24/7 Concierge", "Housekeeping", "Pool & Gardens"],
+      "cta": "View Services",
+      "modal": {
+        "headline": "Effortless Ownership",
+        "description": "Live like a guest in your own home. Our dedicated team handles every detail, from stocking your fridge before arrival to managing rental yields when you are away.",
+        "features": [
+          { "title": "Concierge", "desc": "Flights, excursions, and reservations managed 24/7." },
+          { "title": "Housekeeping", "desc": "Daily or weekly service tailored to your preference." },
+          { "title": "Maintenance", "desc": "Pool, garden, and technical support included." }
+        ]
+      }
+    }
+  },
+  "longevity": {
+    "sectionLabel": "Longevity Clinic",
+    "headline": "The Science of",
+    "headlineAccent": "Time Travel",
+    "intro": "More than a spa. A comprehensive approach to longevity, combining ancestral Moroccan wellness with cutting-edge science. Three floors. One mission: help you live better, longer.",
+    "levels": {
+      "level3": {
+        "label": "Level 3",
+        "sub": "Panoramic Fitness",
+        "title": "Panoramic Fitness",
+        "quote": "\"Train with the Atlas as your horizon\"",
+        "description": "The top floor is devoted to movement. Floor-to-ceiling windows frame the Atlas Mountains as you train with the finest Technogym Artis equipment and expert guidance.",
+        "features": ["Technogym", "Yoga Terrace", "Personal Training"]
+      },
+      "level1-2": {
+        "label": "Levels 1-2",
+        "sub": "Treatments",
+        "title": "Treatment Floors",
+        "quote": "\"Science-backed protocols. Artisanal touch.\"",
+        "description": "Two floors of private treatment suites where our practitioners blend traditional Moroccan therapies with modern longevity protocols.",
+        "treatmentsTitle": "Signature Treatments",
+        "treatments": [
+          { "title": "Longevity Assessment", "desc": "Biomarker testing + Protocol" },
+          { "title": "Moroccan Hammam", "desc": "Traditional cleanse Ritual" },
+          { "title": "IV Therapy", "desc": "NAD+, vitamins" },
+          { "title": "Cryotherapy", "desc": "Full-body chamber" },
+          { "title": "Aesthetic Medicine", "desc": "Non-invasive" },
+          { "title": "Therapeutic Massage", "desc": "Deep tissue, sports" }
+        ]
+      },
+      "levelMinus1": {
+        "label": "Level -1",
+        "sub": "Spa Sanctuary",
+        "title": "The Spa Sanctuary",
+        "quote": "\"Descend into stillness\"",
+        "description": "Beneath the earth, time slows. Our subterranean spa draws from Morocco's ancient hammam tradition, reimagined for modern wellness seekers.",
+        "features": ["Hammam", "Plunges", "Sauna", "Steam", "Rest"]
+      }
+    },
+    "privileges": {
+      "sectionLabel": "Resident Privileges",
+      "headline": "Elevate your wellbeing. Extend your prime.",
+      "items": [
+        { "icon": "∞", "title": "Unlimited Access", "sub": "To Fitness & Spa" },
+        { "icon": "⭐", "title": "Priority Booking", "sub": "For Treatments" },
+        { "icon": "🎁", "title": "Annual Check", "sub": "Health Assessment" },
+        { "icon": "🏠", "title": "In-Villa", "sub": "Private Treatments" }
+      ],
+      "cta1": "Enquire About Residences",
+      "cta2": "Book a Private Tour"
+    }
+  },
+  "footer": {
+    "description": "An organic architectural sanctuary in Marrakech where luxury meets longevity.",
+    "exploreTitle": "Explore",
+    "contactTitle": "Contact",
+    "location": "Marrakech, Morocco",
+    "copyright": "© 2026 Ksar Nujum. All rights reserved.",
+    "developedBy": "A Dar Society development"
+  },
+  "passwordGate": {
+    "title": "KSAR NUJUM",
+    "subtitle": "Private access only",
+    "placeholder": "Enter access code",
+    "invalidCode": "Invalid code. Please try again.",
+    "enter": "Enter",
+    "byInvitation": "By invitation only"
+  }
+}

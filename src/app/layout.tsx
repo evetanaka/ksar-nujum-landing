@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Inter, Cormorant_Garamond, Noto_Sans_JP, Noto_Sans_SC, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
+import { I18nProvider } from "@/i18n";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -12,6 +13,24 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
   variable: "--font-serif",
+});
+
+const notoJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-japanese",
+});
+
+const notoSC = Noto_Sans_SC({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-chinese",
+});
+
+const notoArabic = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-arabic",
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nujum.darsociety.com';
@@ -85,14 +104,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#BC9E73" />
       </head>
-      <body className={`${inter.variable} ${cormorant.variable} antialiased`}>
-        {children}
+      <body className={`${inter.variable} ${cormorant.variable} ${notoJP.variable} ${notoSC.variable} ${notoArabic.variable} antialiased`}>
+        <I18nProvider>
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );
