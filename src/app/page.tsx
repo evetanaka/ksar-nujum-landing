@@ -20,8 +20,8 @@ const VILLAS = [
     name: "ATLAS",
     tagline: "The Mountain Sanctum",
     price: "From €2.5M",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop",
-    interiorImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop",
+    image: "/images/villas/atlas-exterior.png",
+    interiorImage: "/images/villas/atlas-interior.png",
     specs: "500m² • 5 Suites"
   },
   {
