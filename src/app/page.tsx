@@ -29,8 +29,8 @@ const VILLAS = [
     name: "MAJORELLE",
     tagline: "Botanical Poetry",
     price: "From €2.1M",
-    image: "https://images.unsplash.com/photo-1590059390047-6dfdc09cc441?q=80&w=2069&auto=format&fit=crop",
-    interiorImage: "https://images.unsplash.com/photo-1590059390047-6dfdc09cc441?q=80&w=2069&auto=format&fit=crop",
+    image: "/images/villas/majorelle-exterior.png",
+    interiorImage: "/images/villas/majorelle-interior.png",
     specs: "450m² • 4 Suites"
   },
   {
