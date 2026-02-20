@@ -942,16 +942,92 @@ const Footer = () => {
   );
 };
 
+// Password Protection Component
+const PasswordGate = ({ children }: { children: React.ReactNode }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [code, setCode] = useState('');
+  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Check if already authenticated
+    const auth = localStorage.getItem('ksar-nujum-auth');
+    if (auth === 'authenticated') {
+      setIsAuthenticated(true);
+    }
+    setIsLoading(false);
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (code.toUpperCase() === 'JOINTHECIRCLE') {
+      localStorage.setItem('ksar-nujum-auth', 'authenticated');
+      setIsAuthenticated(true);
+      setError(false);
+    } else {
+      setError(true);
+      setCode('');
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <div className="fixed inset-0 bg-[#BC9E73] flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <div className="fixed inset-0 bg-[#BC9E73] flex items-center justify-center z-[10000] p-6">
+        <div className="max-w-md w-full text-center">
+          <h1 className="font-serif text-4xl md:text-5xl text-[#2C241B] mb-4">KSAR NUJUM</h1>
+          <p className="text-[#2C241B]/70 font-light mb-8">Private access only</p>
+          
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              type="text"
+              value={code}
+              onChange={(e) => { setCode(e.target.value); setError(false); }}
+              placeholder="Enter access code"
+              className={`w-full px-6 py-4 bg-white/20 border ${error ? 'border-red-500' : 'border-[#2C241B]/20'} rounded-full text-center text-[#2C241B] placeholder:text-[#2C241B]/40 focus:outline-none focus:border-[#2C241B]/50 font-light tracking-widest uppercase`}
+              autoFocus
+            />
+            {error && (
+              <p className="text-red-700 text-sm">Invalid code. Please try again.</p>
+            )}
+            <button
+              type="submit"
+              className="w-full px-6 py-4 bg-[#2C241B] text-white rounded-full font-light tracking-widest uppercase hover:bg-[#2C241B]/90 transition-colors"
+            >
+              Enter
+            </button>
+          </form>
+          
+          <p className="mt-12 text-[#2C241B]/50 text-xs tracking-widest uppercase">
+            By invitation only
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return <>{children}</>;
+};
+
 export default function Home() {
   return (
-    <div className="bg-[#F5F2EB] selection:bg-[#2C241B] selection:text-white cursor-none">
-      <Cursor />
-      <Hero />
-      <Vision />
-      <Residences />
-      <Experience />
-      <Longevity />
-      <Footer />
-    </div>
+    <PasswordGate>
+      <div className="bg-[#F5F2EB] selection:bg-[#2C241B] selection:text-white cursor-none">
+        <Cursor />
+        <Hero />
+        <Vision />
+        <Residences />
+        <Experience />
+        <Longevity />
+        <Footer />
+      </div>
+    </PasswordGate>
   );
 }
