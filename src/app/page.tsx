@@ -38,8 +38,8 @@ const VILLAS = [
     name: "MENARA",
     tagline: "Water & Reflection",
     price: "From €1.8M",
-    image: "https://images.unsplash.com/photo-1572295283477-8d0739f50625?q=80&w=2070&auto=format&fit=crop",
-    interiorImage: "https://images.unsplash.com/photo-1572295283477-8d0739f50625?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/villas/menara-exterior.jpg",
+    interiorImage: "/images/villas/menara-interior.png",
     specs: "400m² • 4 Suites"
   },
   {
