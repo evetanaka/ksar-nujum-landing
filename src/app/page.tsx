@@ -548,7 +548,7 @@ const Residences = () => {
           {VILLAS.map((villa, index) => (
             <div 
               key={villa.id}
-              className={`absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] ${activeVilla === index ? 'opacity-100 scale-100' : 'opacity-0 scale-110'}`}
+              className={`absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] ${activeVilla === index ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-110 pointer-events-none'}`}
             >
               {/* Exterior Image */}
               <img 
