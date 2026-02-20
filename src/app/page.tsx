@@ -71,7 +71,7 @@ const EXPERIENCES = [
         { title: 'The Garden Table', desc: 'Al fresco grilling in the heart of our organic potager.' },
         { title: 'In-Villa Dining', desc: 'A private chef and sommelier, exclusively for you.' }
       ],
-      detailImage: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop'
+      detailImage: '/images/gastronomy-modal.avif'
     }
   },
   {
