@@ -79,7 +79,7 @@ const EXPERIENCES = [
     title: 'Longevity Clinic',
     subtitle: 'Science meets serenity',
     icon: <Sparkles size={24} />,
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop',
+    image: '/images/longevity-clinic.webp',
     hoverList: ['400m² Wellness Sanctuary', '3 Levels of Care', 'Bio-hacking Lab'],
     cta: 'Discover',
     action: 'scroll' as const,
