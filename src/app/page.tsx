@@ -19,7 +19,7 @@ const VILLAS = [
     id: 1,
     name: "ATLAS",
     tagline: "The Mountain Sanctum",
-    price: "From €2.5M",
+    price: "From €1.5M",
     image: "/images/villas/atlas-exterior.png",
     interiorImage: "/images/villas/atlas-interior.png",
     specs: "500m² • 5 Suites"
@@ -28,7 +28,7 @@ const VILLAS = [
     id: 2,
     name: "MAJORELLE",
     tagline: "Botanical Poetry",
-    price: "From €2.1M",
+    price: "From €1.35M",
     image: "/images/villas/majorelle-exterior.png",
     interiorImage: "/images/villas/majorelle-interior.png",
     specs: "450m² • 4 Suites"
@@ -37,7 +37,7 @@ const VILLAS = [
     id: 3,
     name: "MENARA",
     tagline: "Water & Reflection",
-    price: "From €1.8M",
+    price: "From €1.2M",
     image: "/images/villas/menara-exterior.jpg",
     interiorImage: "/images/villas/menara-interior.png",
     specs: "400m² • 4 Suites"
@@ -46,7 +46,7 @@ const VILLAS = [
     id: 4,
     name: "AGAFAY",
     tagline: "Earthborn Architecture",
-    price: "From €1.5M",
+    price: "From €1M",
     image: "/images/villas/agafay-exterior.jpg",
     interiorImage: "/images/villas/agafay-interior.png",
     specs: "320m² • 3 Suites"
