@@ -123,7 +123,7 @@ const EXPERIENCES = [
         { title: 'Housekeeping', desc: 'Daily or weekly service tailored to your preference.' },
         { title: 'Maintenance', desc: 'Pool, garden, and technical support included.' }
       ],
-      detailImage: 'https://images.unsplash.com/photo-1571896349842-6e53ce41e887?q=80&w=2000&auto=format&fit=crop'
+      detailImage: '/images/resort-modal.jpg'
     }
   }
 ];
