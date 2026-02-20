@@ -91,7 +91,7 @@ const EXPERIENCES = [
     title: 'Daily Rituals',
     subtitle: 'The social heart of Ksar Nujum',
     icon: <Coffee size={24} />,
-    image: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2071&auto=format&fit=crop',
+    image: '/images/daily-rituals.jpg',
     hoverList: ['Specialty Coffee', 'Artisan Bakery', 'Co-working Lounge'],
     cta: 'View Menu',
     action: 'modal' as const,
