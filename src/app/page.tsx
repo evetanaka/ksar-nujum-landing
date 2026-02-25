@@ -513,13 +513,13 @@ const Resort = () => {
       {/* 1. FULL-WIDTH CINEMATIC HERO */}
       <div className="relative h-[80vh] w-full overflow-hidden flex flex-col items-center justify-center">
         <div 
-          className="absolute inset-0 w-full h-[130%] z-0"
-          style={{ transform: `translateY(${Math.max(0, (scrollY - 1500)) * 0.15}px)` }}
+          className="absolute inset-0 w-full h-full z-0"
         >
           <img
             src="/images/resort-aerial.jpg"
             alt="Resort Aerial"
-            className="w-full h-full object-cover object-center opacity-60 sepia-[0.1]"
+            className="w-full h-full object-cover opacity-70 sepia-[0.1]"
+            style={{ objectPosition: 'center 70%' }}
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/40 via-[#0a0a0a]/20 to-[#0a0a0a] z-10"></div>
