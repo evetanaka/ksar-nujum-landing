@@ -8,7 +8,8 @@
     "residences": "Résidences",
     "longevity": "Longévité",
     "experience": "Expérience",
-    "contact": "Contact"
+    "contact": "Contact",
+    "resort": "Resort"
   },
   "hero": {
     "brand": "KSAR NUJUM",
@@ -100,51 +101,94 @@
     "gastronomy": {
       "title": "Gastronomie",
       "subtitle": "Des étoiles Michelin aux grillades de la ferme",
-      "hoverList": ["Le Restaurant Signature", "La Table du Jardin", "Chef Privé"],
+      "hoverList": [
+        "Le Restaurant Signature",
+        "La Table du Jardin",
+        "Chef Privé"
+      ],
       "cta": "Explorer la Cuisine",
       "modal": {
         "headline": "Deux Voyages Culinaires",
         "description": "À Ksar Nujum, la table est une exploration du terroir. Notre chef étoilé réinterprète les classiques marocains avec des techniques avant-gardistes, tandis que notre jardin bio donne l'âme à nos grillades de la ferme à l'assiette.",
         "features": [
-          { "title": "Le Signature", "desc": "Menus dégustation gastronomiques accompagnés de crus rares." },
-          { "title": "La Table du Jardin", "desc": "Grillades en plein air au cœur de notre potager bio." },
-          { "title": "Dîner en Villa", "desc": "Un chef privé et un sommelier, exclusivement pour vous." }
+          {
+            "title": "Le Signature",
+            "desc": "Menus dégustation gastronomiques accompagnés de crus rares."
+          },
+          {
+            "title": "La Table du Jardin",
+            "desc": "Grillades en plein air au cœur de notre potager bio."
+          },
+          {
+            "title": "Dîner en Villa",
+            "desc": "Un chef privé et un sommelier, exclusivement pour vous."
+          }
         ]
       }
     },
     "longevityClinic": {
       "title": "Clinique Longévité",
       "subtitle": "La science rencontre la sérénité",
-      "hoverList": ["Sanctuaire Bien-être de 400m²", "3 Niveaux de Soins", "Laboratoire Bio-hacking"],
+      "hoverList": [
+        "Sanctuaire Bien-être de 400m²",
+        "3 Niveaux de Soins",
+        "Laboratoire Bio-hacking"
+      ],
       "cta": "Découvrir"
     },
     "dailyRituals": {
       "title": "Rituels Quotidiens",
       "subtitle": "Le cœur social de Ksar Nujum",
-      "hoverList": ["Café de Spécialité", "Boulangerie Artisanale", "Espace Co-working"],
+      "hoverList": [
+        "Café de Spécialité",
+        "Boulangerie Artisanale",
+        "Espace Co-working"
+      ],
       "cta": "Voir le Menu",
       "modal": {
         "headline": "Le Rituel du Matin",
         "description": "Commencez votre journée au Café Nujum. Qu'il s'agisse d'un café d'origine unique ou d'un pain au levain tout juste sorti du four, nous croyons au luxe des choses simples parfaitement réalisées.",
         "features": [
-          { "title": "La Torréfaction", "desc": "Grains issus directement de fermes durables." },
-          { "title": "La Boulangerie", "desc": "Pâtisseries françaises revisitées à la marocaine, cuites chaque heure." },
-          { "title": "La Terrasse", "desc": "Vues panoramiques sur l'Atlas pour votre lecture matinale." }
+          {
+            "title": "La Torréfaction",
+            "desc": "Grains issus directement de fermes durables."
+          },
+          {
+            "title": "La Boulangerie",
+            "desc": "Pâtisseries françaises revisitées à la marocaine, cuites chaque heure."
+          },
+          {
+            "title": "La Terrasse",
+            "desc": "Vues panoramiques sur l'Atlas pour votre lecture matinale."
+          }
         ]
       }
     },
     "resortLiving": {
       "title": "Vie de Resort",
       "subtitle": "Service hôtelier 365 jours inclus",
-      "hoverList": ["Conciergerie 24/7", "Service d'Étage", "Piscine & Jardins"],
+      "hoverList": [
+        "Conciergerie 24/7",
+        "Service d'Étage",
+        "Piscine & Jardins"
+      ],
       "cta": "Voir les Services",
       "modal": {
         "headline": "Propriété Sans Effort",
         "description": "Vivez comme un invité dans votre propre maison. Notre équipe dédiée gère chaque détail, du réapprovisionnement de votre réfrigérateur avant votre arrivée à la gestion des revenus locatifs en votre absence.",
         "features": [
-          { "title": "Conciergerie", "desc": "Vols, excursions et réservations gérés 24/7." },
-          { "title": "Service d'Étage", "desc": "Service quotidien ou hebdomadaire selon vos préférences." },
-          { "title": "Maintenance", "desc": "Piscine, jardin et support technique inclus." }
+          {
+            "title": "Conciergerie",
+            "desc": "Vols, excursions et réservations gérés 24/7."
+          },
+          {
+            "title": "Service d'Étage",
+            "desc": "Service quotidien ou hebdomadaire selon vos préférences."
+          },
+          {
+            "title": "Maintenance",
+            "desc": "Piscine, jardin et support technique inclus."
+          }
         ]
       }
     }
@@ -161,7 +205,11 @@
         "title": "Fitness Panoramique",
         "quote": "« Entraînez-vous avec l'Atlas en horizon »",
         "description": "L'étage supérieur est dédié au mouvement. Des baies vitrées du sol au plafond encadrent les montagnes de l'Atlas tandis que vous vous entraînez avec les meilleurs équipements Technogym Artis et un accompagnement expert.",
-        "features": ["Technogym", "Terrasse Yoga", "Coaching Personnel"]
+        "features": [
+          "Technogym",
+          "Terrasse Yoga",
+          "Coaching Personnel"
+        ]
       },
       "level1-2": {
         "label": "Niveaux 1-2",
@@ -171,12 +219,30 @@
         "description": "Deux étages de suites de soins privées où nos praticiens allient les thérapies traditionnelles marocaines aux protocoles modernes de longévité.",
         "treatmentsTitle": "Soins Signature",
         "treatments": [
-          { "title": "Bilan Longévité", "desc": "Tests biomarqueurs + Protocole" },
-          { "title": "Hammam Marocain", "desc": "Rituel de purification traditionnel" },
-          { "title": "Thérapie IV", "desc": "NAD+, vitamines" },
-          { "title": "Cryothérapie", "desc": "Chambre corps entier" },
-          { "title": "Médecine Esthétique", "desc": "Non invasive" },
-          { "title": "Massage Thérapeutique", "desc": "Tissus profonds, sportif" }
+          {
+            "title": "Bilan Longévité",
+            "desc": "Tests biomarqueurs + Protocole"
+          },
+          {
+            "title": "Hammam Marocain",
+            "desc": "Rituel de purification traditionnel"
+          },
+          {
+            "title": "Thérapie IV",
+            "desc": "NAD+, vitamines"
+          },
+          {
+            "title": "Cryothérapie",
+            "desc": "Chambre corps entier"
+          },
+          {
+            "title": "Médecine Esthétique",
+            "desc": "Non invasive"
+          },
+          {
+            "title": "Massage Thérapeutique",
+            "desc": "Tissus profonds, sportif"
+          }
         ]
       },
       "levelMinus1": {
@@ -185,17 +251,39 @@
         "title": "Le Sanctuaire Spa",
         "quote": "« Descendez dans le silence »",
         "description": "Sous terre, le temps ralentit. Notre spa souterrain puise dans la tradition ancestrale du hammam marocain, réimaginé pour les adeptes du bien-être moderne.",
-        "features": ["Hammam", "Bains Froids", "Sauna", "Vapeur", "Repos"]
+        "features": [
+          "Hammam",
+          "Bains Froids",
+          "Sauna",
+          "Vapeur",
+          "Repos"
+        ]
       }
     },
     "privileges": {
       "sectionLabel": "Privilèges Résidents",
       "headline": "Élevez votre bien-être. Prolongez votre prime.",
       "items": [
-        { "icon": "∞", "title": "Accès Illimité", "sub": "Fitness & Spa" },
-        { "icon": "⭐", "title": "Réservation Prioritaire", "sub": "Pour les Soins" },
-        { "icon": "🎁", "title": "Bilan Annuel", "sub": "Évaluation Santé" },
-        { "icon": "🏠", "title": "En Villa", "sub": "Soins Privés" }
+        {
+          "icon": "∞",
+          "title": "Accès Illimité",
+          "sub": "Fitness & Spa"
+        },
+        {
+          "icon": "⭐",
+          "title": "Réservation Prioritaire",
+          "sub": "Pour les Soins"
+        },
+        {
+          "icon": "🎁",
+          "title": "Bilan Annuel",
+          "sub": "Évaluation Santé"
+        },
+        {
+          "icon": "🏠",
+          "title": "En Villa",
+          "sub": "Soins Privés"
+        }
       ],
       "cta1": "Renseignements Résidences",
       "cta2": "Réserver une Visite Privée"
@@ -216,5 +304,40 @@
     "invalidCode": "Code invalide. Veuillez réessayer.",
     "enter": "Entrer",
     "byInvitation": "Sur invitation uniquement"
+  },
+  "resort": {
+    "hero": {
+      "headline": "Un Royaume, Pas un Hôtel",
+      "tagline": "50 clés. 5 hectares. Une vision."
+    },
+    "kasbah": {
+      "number": "30",
+      "title": "La Kasbah",
+      "subtitle": "30 Clés",
+      "desc": "Une forteresse réinventée. Chaque chambre raconte une histoire différente."
+    },
+    "pavilions": {
+      "number": "20",
+      "title": "Pavillons Privés",
+      "subtitle": "85 à 120m²",
+      "desc": "Votre propre univers. Piscine privée. Vue imprenable sur l'Atlas."
+    },
+    "experiences": {
+      "1": {
+        "label": "Gastronomie",
+        "title": "MIDA",
+        "desc": "Des chefs étoilés réinventent la cuisine marocaine."
+      },
+      "2": {
+        "label": "Nature",
+        "title": "5 Hectares de Jardins",
+        "desc": "Oliveraies centenaires. Jardins d'eau. Architecture vivante."
+      },
+      "3": {
+        "label": "Panorama",
+        "title": "Rooftop Atlas",
+        "desc": "Cocktails au coucher du soleil. Toute la chaîne de l'Atlas à vos pieds."
+      }
+    }
   }
 }
