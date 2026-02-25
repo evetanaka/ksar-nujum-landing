@@ -257,7 +257,7 @@ const Hero = () => {
           <div className="font-serif text-2xl tracking-widest text-[#2C241B] font-bold">{t('hero.brand')}</div>
           <div className="flex items-center gap-6">
             <div className={`hidden md:flex gap-12 text-xs uppercase tracking-[0.2em] font-medium text-[#2C241B] ${isRTL ? 'flex-row-reverse' : ''}`}>
-              {['vision', 'residences', 'longevity', 'experience', 'contact'].map(item => (
+              {['vision', 'residences', 'resort', 'longevity', 'experience', 'contact'].map(item => (
                 <a key={item} href={`#${item}`} className="hover:text-white transition-colors">{t(`nav.${item}`)}</a>
               ))}
             </div>
@@ -498,6 +498,126 @@ const Residences = () => {
               </div>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Resort = () => {
+  const scrollY = useScroll();
+  const { t, isRTL } = useTranslation();
+
+  return (
+    <section id="resort" className="bg-[#0a0a0a] text-[#F5F2EB] relative z-10 pb-24">
+      {/* 1. FULL-WIDTH CINEMATIC HERO */}
+      <div className="relative h-[80vh] w-full overflow-hidden flex flex-col items-center justify-center">
+        <div 
+          className="absolute inset-0 w-full h-[120%] -top-[10%] z-0"
+          style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+        >
+          <img
+            src="/images/resort-aerial.jpg"
+            alt="Resort Aerial"
+            className="w-full h-full object-cover opacity-60 sepia-[0.1]"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/30 to-[#0a0a0a] z-10"></div>
+        <div className="relative z-20 text-center px-6 mt-32">
+          <FadeIn>
+            <h2 className="font-serif text-5xl md:text-8xl mb-6 text-white drop-shadow-2xl">
+              {t('resort.hero.headline')}
+            </h2>
+            <p className="font-sans text-xs md:text-sm tracking-[0.3em] uppercase text-white/70">
+              {t('resort.hero.tagline')}
+            </p>
+          </FadeIn>
+        </div>
+      </div>
+
+      {/* 2. TWO-COLUMN SPLIT */}
+      <div className="container mx-auto px-6 py-16 md:py-32">
+        <div className={`grid md:grid-cols-2 gap-16 md:gap-32 ${isRTL ? 'md:grid-flow-dense' : ''}`}>
+          {/* LEFT: The Kasbah */}
+          <FadeIn delay={200}>
+            <div className="relative group cursor-pointer">
+              <div className={`absolute -top-16 ${isRTL ? '-right-8 md:-right-16' : '-left-8 md:-left-16'} text-[200px] md:text-[300px] font-serif font-bold text-white/[0.03] select-none z-0 leading-none pointer-events-none transition-transform duration-1000 group-hover:scale-105`}>
+                {t('resort.kasbah.number')}
+              </div>
+              <div className="relative z-10 pt-16">
+                <div className="overflow-hidden aspect-[4/5] mb-8 relative">
+                  <img
+                    src="/images/resort-kasbah.jpg"
+                    alt="The Kasbah"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700"></div>
+                </div>
+                <h3 className={`font-serif text-3xl md:text-4xl mb-2 text-white ${isRTL ? 'text-right' : ''}`}>
+                  {t('resort.kasbah.title')}
+                </h3>
+                <p className={`font-sans text-xs uppercase tracking-[0.2em] text-[#BC9E73] mb-4 ${isRTL ? 'text-right' : ''}`}>
+                  {t('resort.kasbah.subtitle')}
+                </p>
+                <p className={`font-light text-white/60 text-lg leading-relaxed ${isRTL ? 'text-right' : ''}`}>
+                  {t('resort.kasbah.desc')}
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* RIGHT: The Pavilions */}
+          <FadeIn delay={400}>
+            <div className="relative group cursor-pointer mt-16 md:mt-48">
+              <div className={`absolute -top-16 ${isRTL ? '-left-8 md:-left-16' : '-right-8 md:-right-16'} text-[200px] md:text-[300px] font-serif font-bold text-white/[0.03] select-none z-0 leading-none pointer-events-none transition-transform duration-1000 group-hover:scale-105`}>
+                {t('resort.pavilions.number')}
+              </div>
+              <div className="relative z-10 pt-16">
+                <div className="overflow-hidden aspect-[4/5] mb-8 relative">
+                  <img
+                    src="/images/resort-pavilions.jpg"
+                    alt="The Pavilions"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700"></div>
+                </div>
+                <h3 className={`font-serif text-3xl md:text-4xl mb-2 text-white ${isRTL ? 'text-right' : ''}`}>
+                  {t('resort.pavilions.title')}
+                </h3>
+                <p className={`font-sans text-xs uppercase tracking-[0.2em] text-[#BC9E73] mb-4 ${isRTL ? 'text-right' : ''}`}>
+                  {t('resort.pavilions.subtitle')}
+                </p>
+                <p className={`font-light text-white/60 text-lg leading-relaxed ${isRTL ? 'text-right' : ''}`}>
+                  {t('resort.pavilions.desc')}
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+
+      {/* 3. SIGNATURE EXPERIENCES STRIP */}
+      <div className="container mx-auto px-6 mt-12 md:mt-24">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 snap-x snap-mandatory pb-8 md:pb-0 [&::-webkit-scrollbar]:hidden">
+          {[1, 2, 3].map((num, idx) => (
+            <FadeIn key={num} delay={200 * (idx + 1)} className="snap-center min-w-[85vw] md:min-w-0">
+              <div className="relative h-[250px] w-full rounded-xl overflow-hidden group cursor-pointer">
+                <img
+                  src={`/images/resort-exp-${num}.jpg`}
+                  alt={t(`resort.experiences.${num}.title`)}
+                  className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110 opacity-80"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                <div className={`absolute bottom-0 ${isRTL ? 'right-0 text-right' : 'left-0'} p-6 w-full`}>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#BC9E73] block mb-2">
+                    {t(`resort.experiences.${num}.label`)}
+                  </span>
+                  <h4 className="font-serif text-2xl text-white mb-2">{t(`resort.experiences.${num}.title`)}</h4>
+                  <p className="text-white/70 font-light text-sm">{t(`resort.experiences.${num}.desc`)}</p>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </div>
     </section>
@@ -969,6 +1089,7 @@ export default function Home() {
         <Hero />
         <Vision />
         <Residences />
+        <Resort />
         <Experience />
         <Longevity />
         <Footer />
